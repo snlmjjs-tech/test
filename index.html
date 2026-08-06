@@ -3,38 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intranet - Prueba de Taller de Inglés</title>
-    <!-- Tailwind CSS CDN para un diseño moderno y fluido -->
+    <title>Prueba de Nivelación de Inglés - Teacher Seba</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome para iconos limpios -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Canvas Confetti para celebrar los resultados al finalizar -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        /* Custom scrollbar para la navegación de preguntas */
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: #f1f5f9;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 4px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
-        }
+        body { font-family: 'Inter', sans-serif; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #f1f5f9; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col antialiased">
 
-    <!-- HEADER / BARRA DE NAVEGACIÓN -->
+    <!-- HEADER -->
     <header class="bg-indigo-900 text-white shadow-md sticky top-0 z-40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-3">
@@ -42,8 +26,8 @@
                     <i class="fa-solid fa-graduation-cap text-xl"></i>
                 </div>
                 <div>
-                    <h1 class="font-bold text-lg leading-tight tracking-wide">ENGLISH WORKSHOP</h1>
-                    <p class="text-xs text-indigo-200">Plataforma de evaluación digital del profesor Sebastián</p>
+                    <h1 class="font-bold text-lg leading-tight tracking-wide">TEACHER SEBA</h1>
+                    <p class="text-xs text-indigo-200">Prueba de nivelación de inglés</p>
                 </div>
             </div>
             <div class="flex items-center space-x-4">
@@ -57,10 +41,9 @@
         </div>
     </header>
 
-    <!-- CUERPO PRINCIPAL -->
     <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col justify-center">
-        
-        <!-- PANEL DE CONFIGURACIÓN DEL DOCENTE (OCULTO POR DEFECTO) -->
+
+        <!-- PANEL DE CONFIGURACIÓN -->
         <div id="config-panel" class="hidden mb-6 bg-white border border-indigo-100 rounded-2xl p-6 shadow-sm transition-all duration-300">
             <div class="flex justify-between items-center mb-4 border-b pb-3">
                 <h3 class="font-bold text-indigo-900 text-lg flex items-center">
@@ -89,51 +72,39 @@
             </div>
         </div>
 
-        <!-- 1. PANTALLA DE INGRESO (LOGIN DE ESTUDIANTES) -->
+        <!-- 1. LOGIN -->
         <section id="screen-login" class="bg-white rounded-3xl shadow-xl border border-slate-100 p-8 max-w-md w-full mx-auto transition-all duration-300">
             <div class="text-center mb-8">
-                <span class="bg-indigo-50 text-indigo-600 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase">Taller de Inglés</span>
-                <h2 class="text-2xl font-extrabold text-slate-800 mt-3">Evaluación General</h2>
-                <p class="text-slate-500 mt-1 text-sm">Ingresa tus datos para comenzar tu prueba en la intranet.</p>
+                <span class="bg-indigo-50 text-indigo-600 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase">Placement Test</span>
+                <h2 class="text-2xl font-extrabold text-slate-800 mt-3">Prueba de Nivelación de Inglés</h2>
+                <p class="text-slate-500 mt-1 text-sm">Responde para que Teacher Seba conozca tu nivel actual antes de comenzar tus clases.</p>
             </div>
 
             <form id="form-login" class="space-y-5" onsubmit="event.preventDefault();">
                 <div>
-                    <label for="student-name" class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-2">Nombre Completo del Estudiante:</label>
+                    <label for="student-name" class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-2">Nombre Completo:</label>
                     <div class="relative">
                         <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400">
                             <i class="fa-solid fa-user"></i>
                         </span>
-                        <input type="text" id="student-name" required placeholder="Ej: Matías Alarcón" 
+                        <input type="text" id="student-name" required placeholder="Ej: Camila Torres"
                                class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-slate-50 focus:bg-white transition duration-200">
                     </div>
                 </div>
 
-                <div>
-                    <label for="student-class" class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-2">Curso / Taller:</label>
-                    <div class="relative">
-                        <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400">
-                            <i class="fa-solid fa-users"></i>
-                        </span>
-                        <input type="text" id="student-class" required value="Taller Puertas al Inglés" 
-                               class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-slate-100 font-medium transition duration-200">
-                    </div>
-                </div>
-
-                <!-- INFO DE LA PRUEBA -->
                 <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 text-xs text-slate-600 space-y-2">
                     <div class="flex items-center text-indigo-700 font-semibold">
                         <i class="fa-solid fa-circle-info mr-2"></i> Detalles de la prueba:
                     </div>
                     <ul class="list-disc list-inside space-y-1 pl-1">
-                        <li>30 Preguntas estructuradas sobre lo visto en clases.</li>
-                        <li>Secciones: Saludos, Inglés de Viajes, Preguntas de uso diario, Verbos, Trabajos y Repaso Mixto.</li>
+                        <li>30 preguntas de gramática y vocabulario, de nivel básico a intermedio.</li>
+                        <li>Secciones: Vocabulario básico, Gramática básica, Vocabulario intermedio, Gramática intermedia, Tiempos verbales y Repaso mixto.</li>
                         <li>Tiempo estimado máximo: <span id="info-time">30</span> minutos.</li>
-                        <li>Al finalizar, tus resultados se enviarán automáticamente a tu docente.</li>
+                        <li>Al finalizar, tus resultados se enviarán automáticamente a Teacher Seba.</li>
                     </ul>
                 </div>
 
-                <button type="submit" id="btn-start-quiz" 
+                <button type="submit" id="btn-start-quiz"
                         class="w-full py-3.5 px-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl shadow-lg shadow-indigo-200 hover:shadow-indigo-300 transform hover:-translate-y-0.5 active:translate-y-0 transition duration-150 flex items-center justify-center">
                     <span>Comenzar Prueba</span>
                     <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
@@ -141,23 +112,17 @@
             </form>
         </section>
 
-        <!-- 2. PANTALLA DEL EXAMEN (INTRAVISTA PRINCIPAL) -->
+        <!-- 2. QUIZ -->
         <section id="screen-quiz" class="hidden grid grid-cols-1 lg:grid-cols-4 gap-8 transition-all duration-300">
-            
-            <!-- PANEL LATERAL IZQUIERDO: INFORMACIÓN Y TIEMPO -->
             <div class="lg:col-span-1 space-y-6">
-                <!-- Tarjeta Estudiante -->
                 <div class="bg-white border border-slate-100 rounded-2xl p-5 shadow-sm">
                     <div class="flex items-center space-x-3 mb-3 pb-3 border-b">
-                        <div class="bg-indigo-100 text-indigo-700 font-extrabold w-10 h-10 rounded-full flex items-center justify-center text-lg" id="student-avatar">
-                            U
-                        </div>
+                        <div class="bg-indigo-100 text-indigo-700 font-extrabold w-10 h-10 rounded-full flex items-center justify-center text-lg" id="student-avatar">U</div>
                         <div>
                             <h4 class="font-bold text-slate-800 text-sm leading-tight truncate max-w-[150px]" id="display-student-name">Estudiante</h4>
-                            <p class="text-xs text-slate-500 truncate max-w-[150px]" id="display-student-class">Curso</p>
+                            <p class="text-xs text-slate-500 truncate max-w-[150px]">Prueba de Nivelación</p>
                         </div>
                     </div>
-                    <!-- Temporizador -->
                     <div class="space-y-1">
                         <div class="flex justify-between items-center text-xs text-slate-500">
                             <span>Tiempo restante:</span>
@@ -173,7 +138,6 @@
                     </div>
                 </div>
 
-                <!-- Progreso general del Examen -->
                 <div class="bg-white border border-slate-100 rounded-2xl p-5 shadow-sm">
                     <div class="flex justify-between items-center mb-3">
                         <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Progreso Global</span>
@@ -182,12 +146,8 @@
                     <div class="w-full bg-slate-100 rounded-full h-3 mb-4 overflow-hidden">
                         <div id="progress-bar-fill" class="bg-indigo-600 h-full rounded-full transition-all duration-300" style="width: 0%"></div>
                     </div>
-                    
-                    <!-- Cuadrícula interactiva de 30 preguntas -->
                     <div class="text-xs font-bold text-slate-500 mb-2">Selector de Preguntas:</div>
-                    <div class="grid grid-cols-5 gap-1.5 max-h-48 overflow-y-auto custom-scrollbar pr-1" id="questions-grid">
-                        <!-- Generado dinámicamente con JS -->
-                    </div>
+                    <div class="grid grid-cols-5 gap-1.5 max-h-48 overflow-y-auto custom-scrollbar pr-1" id="questions-grid"></div>
                     <div class="mt-4 flex flex-col space-y-2 text-[11px] text-slate-500">
                         <div class="flex items-center"><span class="w-3 h-3 rounded bg-slate-100 border inline-block mr-2"></span> No respondida</div>
                         <div class="flex items-center"><span class="w-3 h-3 rounded bg-indigo-100 border border-indigo-300 inline-block mr-2"></span> Viendo actualmente</div>
@@ -196,87 +156,61 @@
                 </div>
             </div>
 
-            <!-- PANEL CENTRAL / PREGUNTAS -->
             <div class="lg:col-span-3 space-y-6">
-                <!-- Tarjeta del Examen -->
                 <div class="bg-white border border-slate-100 rounded-3xl shadow-sm p-6 sm:p-8 flex flex-col justify-between min-h-[480px]">
                     <div>
-                        <!-- Información de Sección -->
                         <div class="flex justify-between items-center mb-6 pb-4 border-b">
                             <div>
-                                <span id="question-section-tag" class="text-xs font-extrabold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full uppercase tracking-wider">
-                                    Sección 1
-                                </span>
+                                <span id="question-section-tag" class="text-xs font-extrabold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full uppercase tracking-wider">Sección 1</span>
                             </div>
                             <span id="question-number-display" class="text-sm font-bold text-slate-400">Pregunta 1 de 30</span>
                         </div>
-
-                        <!-- Enunciado de la Pregunta -->
                         <div class="mb-8">
-                            <h3 class="text-lg sm:text-xl font-bold text-slate-800 leading-snug" id="question-text-title">
-                                Cargando pregunta...
-                            </h3>
+                            <h3 class="text-lg sm:text-xl font-bold text-slate-800 leading-snug" id="question-text-title">Cargando pregunta...</h3>
                             <p class="text-xs text-slate-400 mt-1 italic" id="question-instruction">Selecciona la alternativa correcta para responder la pregunta.</p>
                         </div>
-
-                        <!-- Opciones de respuesta -->
-                        <div class="space-y-3" id="options-container">
-                            <!-- Generadas dinámicamente -->
-                        </div>
+                        <div class="space-y-3" id="options-container"></div>
                     </div>
-
-                    <!-- Botones de Navegación del Examen -->
                     <div class="mt-8 pt-6 border-t flex flex-col sm:flex-row sm:justify-between gap-4">
                         <button id="btn-prev" class="px-5 py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-xl transition flex items-center justify-center">
                             <i class="fa-solid fa-arrow-left mr-2"></i> Anterior
                         </button>
                         <div class="flex gap-3">
-                            <button id="btn-skip" class="px-5 py-3 bg-amber-50 hover:bg-amber-100 text-amber-700 font-bold rounded-xl transition">
-                                Saltar / Dejar para después
-                            </button>
+                            <button id="btn-skip" class="px-5 py-3 bg-amber-50 hover:bg-amber-100 text-amber-700 font-bold rounded-xl transition">Saltar / Dejar para después</button>
                             <button id="btn-next" class="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl shadow-md shadow-indigo-100 transition flex items-center justify-center">
                                 Siguiente <i class="fa-solid fa-arrow-right ml-2"></i>
                             </button>
                         </div>
                     </div>
                 </div>
-
-                <!-- Alerta o aviso inferior -->
                 <div class="bg-indigo-50 border border-indigo-100 rounded-2xl p-4 flex items-start space-x-3 text-sm text-indigo-900">
                     <i class="fa-solid fa-lightbulb text-indigo-500 mt-0.5 text-base"></i>
-                    <div>
-                        <span class="font-bold">Consejo:</span> Puedes cambiar tus respuestas en la cuadrícula izquierda antes de enviar la prueba al profesor.
-                    </div>
+                    <div><span class="font-bold">Consejo:</span> Puedes cambiar tus respuestas en la cuadrícula izquierda antes de enviar la prueba.</div>
                 </div>
             </div>
         </section>
 
-        <!-- 3. PANTALLA DE RESULTADOS Y ENVÍO -->
+        <!-- 3. RESULTADOS -->
         <section id="screen-results" class="hidden bg-white rounded-3xl shadow-xl border border-slate-100 p-8 max-w-4xl w-full mx-auto transition-all duration-300">
-            <!-- Encabezado de Éxito -->
             <div class="text-center mb-8">
                 <div class="mx-auto w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-3xl mb-4 animate-bounce">
                     <i class="fa-solid fa-circle-check"></i>
                 </div>
-                <h2 class="text-3xl font-extrabold text-slate-800">¡Examen Completado!</h2>
-                <p class="text-slate-500 mt-1" id="completion-subtitle">Felicidades, has terminado el taller de inglés.</p>
+                <h2 class="text-3xl font-extrabold text-slate-800">¡Prueba Completada!</h2>
+                <p class="text-slate-500 mt-1" id="completion-subtitle">Gracias por completar tu prueba de nivelación.</p>
             </div>
 
-            <!-- Panel de Resultados Resumido -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 text-center">
-                <!-- Puntaje -->
                 <div class="bg-slate-50 border border-slate-100 rounded-2xl p-5">
                     <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Puntuación Final</p>
                     <p class="text-4xl font-black text-indigo-600 mt-2" id="score-display">0 / 30</p>
                     <p class="text-xs text-slate-500 mt-1">Preguntas correctas</p>
                 </div>
-                <!-- Porcentaje -->
                 <div class="bg-slate-50 border border-slate-100 rounded-2xl p-5">
                     <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Rendimiento</p>
                     <p class="text-4xl font-black text-emerald-600 mt-2" id="percentage-display">0%</p>
                     <p class="text-xs text-slate-500 mt-1" id="performance-label">Buen trabajo</p>
                 </div>
-                <!-- Tiempo Empleado -->
                 <div class="bg-slate-50 border border-slate-100 rounded-2xl p-5">
                     <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Tiempo de Prueba</p>
                     <p class="text-4xl font-black text-slate-700 mt-2" id="time-spent-display">00:00</p>
@@ -284,7 +218,6 @@
                 </div>
             </div>
 
-            <!-- NOTIFICACIÓN DE ENVÍO AUTOMÁTICO AL PROFESOR SEBASTIÁN -->
             <div class="mb-8">
                 <div id="email-sending-status" class="bg-amber-50 border border-amber-200 rounded-3xl p-6 flex items-center space-x-4">
                     <div class="p-3 bg-amber-100 text-amber-700 rounded-full animate-spin flex items-center justify-center">
@@ -292,20 +225,17 @@
                     </div>
                     <div>
                         <h4 class="font-bold text-amber-900 text-base">Enviando resultados automáticamente...</h4>
-                        <p class="text-xs text-amber-700 mt-0.5">Espere un momento mientras registramos sus respuestas con el docente.</p>
+                        <p class="text-xs text-amber-700 mt-0.5">Espere un momento mientras registramos tus respuestas con Teacher Seba.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- COPIAS DE SEGURIDAD / DESCARGAS -->
             <div class="bg-slate-50 border border-slate-200 rounded-3xl p-6 mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div class="space-y-1">
                     <h4 class="font-bold text-slate-800 text-sm flex items-center">
                         <i class="fa-solid fa-file-shield mr-2 text-indigo-600"></i> ¿Deseas guardar tus respuestas?
                     </h4>
-                    <p class="text-xs text-slate-500">
-                        Puedes descargar o copiar tu reporte personal para tener un respaldo de tu evaluación.
-                    </p>
+                    <p class="text-xs text-slate-500">Puedes descargar o copiar tu reporte personal para tener un respaldo de tu evaluación.</p>
                 </div>
                 <div class="flex flex-col sm:flex-row gap-2">
                     <button id="btn-download-report" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-center">
@@ -317,80 +247,64 @@
                 </div>
             </div>
 
-            <!-- REVISIÓN DETALLADA DE PREGUNTAS -->
             <div class="border-t pt-8">
                 <h3 class="font-bold text-slate-800 text-lg mb-4 flex items-center">
                     <i class="fa-solid fa-list-check mr-2 text-indigo-600"></i> Revisión de Preguntas
                 </h3>
-                <div class="space-y-4 max-h-[500px] overflow-y-auto custom-scrollbar pr-2" id="results-detailed-container">
-                    <!-- Respuestas detalladas inyectadas por JS -->
-                </div>
+                <div class="space-y-4 max-h-[500px] overflow-y-auto custom-scrollbar pr-2" id="results-detailed-container"></div>
             </div>
 
-            <!-- Botón para reiniciar prueba -->
             <div class="mt-8 pt-6 border-t flex justify-between">
-                <button id="btn-restart" class="px-5 py-3 border border-slate-300 text-slate-600 font-bold rounded-xl hover:bg-slate-50 transition">
-                    Dar prueba de nuevo
-                </button>
-                <span class="text-xs text-slate-400 self-center">Taller Puertas al Inglés - Profesor Sebastián</span>
+                <button id="btn-restart" class="px-5 py-3 border border-slate-300 text-slate-600 font-bold rounded-xl hover:bg-slate-50 transition">Dar prueba de nuevo</button>
+                <span class="text-xs text-slate-400 self-center">Prueba de Nivelación - Teacher Seba</span>
             </div>
         </section>
 
     </main>
 
-    <!-- NOTIFICACIÓN DE MENSAJES CUSTOM EN LUGAR DE ALERT() -->
     <div id="toast-notification" class="fixed bottom-5 right-5 bg-slate-900 text-white py-3 px-5 rounded-xl shadow-2xl flex items-center space-x-3 transform translate-y-24 opacity-0 transition-all duration-300 z-50">
         <span id="toast-icon" class="text-indigo-400"><i class="fa-solid fa-circle-info"></i></span>
         <span id="toast-message" class="text-sm font-medium">Notificación general.</span>
     </div>
 
-    <!-- FORMULARIO OCULTO PARA ENVÍO SEGURO SIN CORS (POST POR IFRAME CON FILTRO _URL PARA EVITAR BLOQUEOS LOCALES) -->
     <form id="hidden-email-form" action="https://formsubmit.co/anglosaf@gmail.com" method="POST" target="hidden-iframe" class="hidden" style="display:none;">
         <input type="hidden" name="Estudiante" id="hidden-student-name">
-        <input type="hidden" name="Curso_Taller" id="hidden-student-class">
         <input type="hidden" name="Puntaje" id="hidden-score">
         <input type="hidden" name="Rendimiento" id="hidden-percentage">
         <input type="hidden" name="Tiempo_Empleado" id="hidden-time">
         <input type="hidden" name="_subject" id="hidden-subject">
         <input type="hidden" name="_captcha" value="false">
-        <!-- Parámetro _url es VITAL para obligar a FormSubmit a saltarse la restricción de hosting local -->
-        <input type="hidden" name="_url" value="https://intranet-taller-ingles.github.io/evaluacion.html">
+        <input type="hidden" name="_url" value="https://teacherseba.com/prueba-nivelacion.html">
         <textarea name="Reporte_Detallado" id="hidden-report" class="hidden" style="display:none;"></textarea>
     </form>
     <iframe name="hidden-iframe" id="hidden-iframe" class="hidden" style="display:none; width:0; height:0; border:0;"></iframe>
 
-    <!-- PIE DE PÁGINA -->
     <footer class="bg-slate-100 border-t border-slate-200 py-6 text-center text-xs text-slate-500 mt-auto">
-        <p>© 2026 Taller de Inglés Intranet. Todos los derechos reservados.</p>
-        <p class="mt-1 text-slate-400">Diseñado con propósitos didácticos y retroalimentación activa del profesor.</p>
+        <p>© 2026 Teacher Seba - Clases de Inglés. Todos los derechos reservados.</p>
+        <p class="mt-1 text-slate-400">Prueba de nivelación diseñada para conocer tu punto de partida.</p>
     </footer>
 
-    <!-- SCRIPT DE LÓGICA Y DATOS -->
     <script>
-        // CONFIGURACIÓN Y ESTADOS GLOBALES
         let currentQuestionIndex = 0;
-        let userAnswers = {}; // Almacenará { questionId: selectedOptionIndex }
-        let studentData = { name: "", class: "Taller Puertas al Inglés" };
+        let userAnswers = {};
+        let studentData = { name: "" };
         let quizTimerInterval = null;
-        let secondsRemaining = 1800; // 30 mins por defecto
+        let secondsRemaining = 1800;
         let totalQuizSeconds = 1800;
         let isQuizActive = false;
-        
-        // CORREO PREDETERMINADO DEL DOCENTE
-        let teacherEmail = localStorage.getItem("teacher_email") || "anglosaf@gmail.com";
-        let configQuizTime = parseInt(localStorage.getItem("quiz_time_limit")) || 30; // minutos
 
-        // REFERENCIAS EXPLÍCITAS DEL DOM
+        let teacherEmail = localStorage.getItem("teacher_email") || "anglosaf@gmail.com";
+        let configQuizTime = parseInt(localStorage.getItem("quiz_time_limit")) || 30;
+
         const screenLogin = document.getElementById("screen-login");
         const screenQuiz = document.getElementById("screen-quiz");
         const screenResults = document.getElementById("screen-results");
-        
+
         const formLogin = document.getElementById("form-login");
         const studentNameInput = document.getElementById("student-name");
-        const studentClassInput = document.getElementById("student-class");
         const infoTimeSpan = document.getElementById("info-time");
         const btnStartQuiz = document.getElementById("btn-start-quiz");
-        
+
         const configPanel = document.getElementById("config-panel");
         const btnConfig = document.getElementById("btn-config");
         const closeConfig = document.getElementById("close-config");
@@ -400,7 +314,6 @@
         const teacherBadge = document.getElementById("teacher-badge");
 
         const displayStudentName = document.getElementById("display-student-name");
-        const displayStudentClass = document.getElementById("display-student-class");
         const studentAvatar = document.getElementById("student-avatar");
         const timerText = document.getElementById("timer-text");
         const timerProgress = document.getElementById("timer-progress");
@@ -411,7 +324,6 @@
         const questionSectionTag = document.getElementById("question-section-tag");
         const questionNumberDisplay = document.getElementById("question-number-display");
         const questionTextTitle = document.getElementById("question-text-title");
-        const questionInstruction = document.getElementById("question-instruction");
         const optionsContainer = document.getElementById("options-container");
 
         const btnPrev = document.getElementById("btn-prev");
@@ -432,265 +344,53 @@
         const toastMessage = document.getElementById("toast-message");
         const toastIcon = document.getElementById("toast-icon");
 
-        // BANCO DE PREGUNTAS ACTUALIZADAS DEL CURSO
+        // BANCO DE PREGUNTAS: GRAMÁTICA Y VOCABULARIO (BÁSICO -> INTERMEDIO)
         const questions = [
-            // --- PART I: GREETINGS AND USEFUL EXPRESSIONS (1-5) ---
-            {
-                id: 1,
-                section: "Greetings and Useful Expressions",
-                text: "How do you say \"¿Cómo estás?\"",
-                options: ["Where are you?", "How are you?", "Who are you?", "What are you?"],
-                correct: 1, // "How are you?"
-                explanation: "\"How are you?\" es la pregunta estándar para decir \"¿Cómo estás?\". \"Where are you?\" significa ¿Dónde estás? y \"Who are you?\" significa ¿Quién eres?."
-            },
-            {
-                id: 2,
-                section: "Greetings and Useful Expressions",
-                text: "What does \"See you later\" mean?",
-                options: ["Buenos días", "Hasta mañana", "Nos vemos luego", "Gracias"],
-                correct: 2, // "Nos vemos luego"
-                explanation: "\"See you later\" se traduce directamente como \"Nos vemos luego\" o \"Te veo más tarde\"."
-            },
-            {
-                id: 3,
-                section: "Greetings and Useful Expressions",
-                text: "Complete: \"_____ care!\"",
-                options: ["Have", "Take", "Make", "Get"],
-                correct: 1, // "Take"
-                explanation: "La frase imperativa para despedirse deseando bienestar es \"Take care!\" (¡Cuídate!)."
-            },
-            {
-                id: 4,
-                section: "Greetings and Useful Expressions",
-                text: "What does \"Really?\" mean?",
-                options: ["Tal vez", "En serio", "Claro", "Nunca"],
-                correct: 1, // "En serio"
-                explanation: "\"Really?\" se usa para expresar sorpresa o incredulidad leve, equivalente a \"¿En serio?\" o \"¿De verdad?\"."
-            },
-            {
-                id: 5,
-                section: "Greetings and Useful Expressions",
-                text: "\"I don't know\" means:",
-                options: ["Lo entiendo", "No me gusta", "No lo sé", "Estoy ocupado"],
-                correct: 2, // "No lo sé"
-                explanation: "El verbo 'know' significa saber/conocer, por ende \"I don't know\" significa \"No lo sé\"."
-            },
-            
-            // --- PART II: TRAVEL ENGLISH (6-10) ---
-            {
-                id: 6,
-                section: "Travel English",
-                text: "What is a \"boarding pass\"?",
-                options: ["Pasaporte", "Pase de abordar", "Equipaje", "Aduana"],
-                correct: 1, // "Pase de abordar"
-                explanation: "Un \"boarding pass\" es el pase impreso o digital indispensable para subir al avión."
-            },
-            {
-                id: 7,
-                section: "Travel English",
-                text: "Where do you collect your luggage?",
-                options: ["Gate", "Customs", "Baggage Claim", "Security Check"],
-                correct: 2, // "Baggage Claim"
-                explanation: "La zona del aeropuerto con cintas transportadoras para recoger equipaje es el \"Baggage Claim\"."
-            },
-            {
-                id: 8,
-                section: "Travel English",
-                text: "How do you ask for help?",
-                options: ["Can you help me?", "Where is my bag?", "How much is it?", "I am hungry"],
-                correct: 0, // "Can you help me?"
-                explanation: "\"Can you help me?\" es la forma educada de preguntar \"¿Me puede ayudar?\"."
-            },
-            {
-                id: 9,
-                section: "Travel English",
-                text: "\"Customs\" means:",
-                options: ["Hotel", "Taxi", "Aduana", "Maleta"],
-                correct: 2, // "Aduana"
-                explanation: "\"Customs\" se traduce en los controles migratorios de aeropuertos como \"Aduana\"."
-            },
-            {
-                id: 10,
-                section: "Travel English",
-                text: "If you are at the airport and you want to know your boarding gate, how do you ask?",
-                options: ["Where is my driver?", "Where is my gate?", "Where is my room?", "Where is my train?"],
-                correct: 1, // "Where is my gate?"
-                explanation: "Para consultar por tu puerta de embarque o abordaje en el aeropuerto, la pregunta correcta y contextualizada es: \"Where is my gate?\"."
-            },
+            // --- VOCABULARIO BÁSICO (1-5) ---
+            { id: 1, section: "Vocabulario Básico", text: "What is the opposite of \"hot\"?", options: ["Big", "Cold", "Fast", "Happy"], correct: 1, explanation: "\"Cold\" es el antónimo directo de \"hot\" (caliente)." },
+            { id: 2, section: "Vocabulario Básico", text: "What is the English word for \"fregadero\" (lavaplatos)?", options: ["Sink", "Sofa", "Shelf", "Stove"], correct: 0, explanation: "\"Sink\" es el fregadero o lavaplatos de la cocina." },
+            { id: 3, section: "Vocabulario Básico", text: "What is a synonym for \"big\"?", options: ["Small", "Large", "Short", "Thin"], correct: 1, explanation: "\"Large\" es sinónimo de \"big\" (grande)." },
+            { id: 4, section: "Vocabulario Básico", text: "Which word means \"rápido\"?", options: ["Slow", "Fast", "Late", "Loud"], correct: 1, explanation: "\"Fast\" se traduce como \"rápido\"." },
+            { id: 5, section: "Vocabulario Básico", text: "What is the plural of \"child\"?", options: ["Childs", "Childes", "Children", "Childrens"], correct: 2, explanation: "\"Child\" tiene un plural irregular: \"children\"." },
 
-            // --- PART III: EVERYDAY QUESTIONS (11-15) ---
-            {
-                id: 11,
-                section: "Everyday Questions",
-                text: "How do you ask the time?",
-                options: ["What time is it?", "Where is it?", "How are you?", "Who is it?"],
-                correct: 0, // "What time is it?"
-                explanation: "\"What time is it?\" es la pregunta tradicional de nivel básico para pedir la hora actual."
-            },
-            {
-                id: 12,
-                section: "Everyday Questions",
-                text: "\"Turn left\" means:",
-                options: ["Sigue derecho", "Dobla a la derecha", "Dobla a la izquierda", "Cruza la calle"],
-                correct: 2, // "Dobla a la izquierda"
-                explanation: "\"Turn\" es doblar/girar, y \"left\" es izquierda. Por lo tanto, es \"Dobla a la izquierda\"."
-            },
-            {
-                id: 13,
-                section: "Everyday Questions",
-                text: "How do you ask for the menu?",
-                options: ["Can I see the menu?", "Can I see the station?", "Can I see the ticket?", "Can I see the airport?"],
-                correct: 0, // "Can I see the menu?"
-                explanation: "La frase educada para pedir la carta en un restaurante es \"Can I see the menu?\"."
-            },
-            {
-                id: 14,
-                section: "Everyday Questions",
-                text: "\"How much is this?\" means:",
-                options: ["¿Dónde está esto?", "¿Cuánto cuesta esto?", "¿Qué es esto?", "¿Quién es?"],
-                correct: 1, // "¿Cuánto cuesta esto?"
-                explanation: "\"How much...\" se utiliza para preguntar por precios o montos de dinero."
-            },
-            {
-                id: 15,
-                section: "Everyday Questions",
-                text: "\"Bus stop\" means:",
-                options: ["Estación de tren", "Aeropuerto", "Paradero de buses", "Taxi"],
-                correct: 2, // "Paradero de buses"
-                explanation: "Un paradero o parada oficial de buses en la calle se denomina \"Bus stop\"."
-            },
+            // --- GRAMÁTICA BÁSICA (6-10) ---
+            { id: 6, section: "Gramática Básica", text: "Complete: \"She ___ a teacher.\"", options: ["am", "is", "are", "be"], correct: 1, explanation: "Con \"she\" (tercera persona singular) se usa \"is\"." },
+            { id: 7, section: "Gramática Básica", text: "Choose the correct sentence:", options: ["I have two brothers.", "I has two brothers.", "I haves two brothers.", "I having two brothers."], correct: 0, explanation: "Con \"I\" el verbo \"have\" no cambia en presente simple." },
+            { id: 8, section: "Gramática Básica", text: "Complete: \"They ___ playing football now.\"", options: ["is", "am", "are", "be"], correct: 2, explanation: "Con el sujeto plural \"they\" se usa \"are\" en presente continuo." },
+            { id: 9, section: "Gramática Básica", text: "Choose the correct question word: \"___ do you live?\"", options: ["What", "Who", "Where", "When"], correct: 2, explanation: "\"Where\" se usa para preguntar por un lugar." },
+            { id: 10, section: "Gramática Básica", text: "Choose the correct plural: \"one book, two ___\"", options: ["book", "bookes", "books", "bookies"], correct: 2, explanation: "El plural regular de \"book\" es \"books\"." },
 
-            // --- PART IV: VERBS (16-20) ---
-            {
-                id: 16,
-                section: "Verbs",
-                text: "What is the meaning of \"go\"?",
-                options: ["Comer", "Ir", "Dormir", "Comprar"],
-                correct: 1, // "Ir"
-                explanation: "El verbo irregular \"go\" se traduce directamente al español como \"Ir\"."
-            },
-            {
-                id: 17,
-                section: "Verbs",
-                text: "Complete: \"I want _____ study English.\"",
-                options: ["in", "at", "to", "on"],
-                correct: 2, // "to"
-                explanation: "El verbo 'want' se conecta con un verbo infinitivo utilizando la partícula \"to\" (want to study)."
-            },
-            {
-                id: 18,
-                section: "Verbs",
-                text: "Which sentence is correct?",
-                options: ["He work every day.", "He works every day.", "He working every day.", "He to work every day."],
-                correct: 1, // "He works every day."
-                explanation: "En presente simple, para la tercera persona singular (He/She/It), se añade una \"s\" al verbo principal."
-            },
-            {
-                id: 19,
-                section: "Verbs",
-                text: "What is the meaning of \"buy\"?",
-                options: ["Viajar", "Obtener", "Comprar", "Volar"],
-                correct: 2, // "Comprar"
-                explanation: "El verbo \"buy\" significa adquirir un objeto a cambio de dinero, es decir, \"Comprar\"."
-            },
-            {
-                id: 20,
-                section: "Verbs",
-                text: "Complete: \"She _____ books.\"",
-                options: ["read", "reads", "reading", "to read"],
-                correct: 1, // "reads"
-                explanation: "Siguiendo la regla de la tercera persona en presente simple (She), el verbo 'read' se convierte en \"reads\"."
-            },
+            // --- VOCABULARIO INTERMEDIO (11-15) ---
+            { id: 11, section: "Vocabulario Intermedio", text: "What does \"exhausted\" mean?", options: ["Very happy", "Very tired", "Very angry", "Very hungry"], correct: 1, explanation: "\"Exhausted\" significa extremadamente cansado." },
+            { id: 12, section: "Vocabulario Intermedio", text: "Choose a synonym for \"afraid\":", options: ["Brave", "Scared", "Calm", "Proud"], correct: 1, explanation: "\"Scared\" es sinónimo de \"afraid\" (asustado)." },
+            { id: 13, section: "Vocabulario Intermedio", text: "\"To borrow\" means:", options: ["Prestar (dar)", "Tomar prestado", "Devolver", "Regalar"], correct: 1, explanation: "\"To borrow\" es pedir algo prestado, no darlo." },
+            { id: 14, section: "Vocabulario Intermedio", text: "Which word means \"reunión\"?", options: ["Meeting", "Meaning", "Metting", "Meting"], correct: 0, explanation: "\"Meeting\" significa \"reunión\" en un contexto laboral o social." },
+            { id: 15, section: "Vocabulario Intermedio", text: "What does \"however\" mean?", options: ["Además", "Sin embargo", "Por lo tanto", "Mientras tanto"], correct: 1, explanation: "\"However\" se usa para introducir un contraste, como \"sin embargo\"." },
 
-            // --- PART V: WORK AND JOBS (21-25) ---
-            {
-                id: 21,
-                section: "Work and Jobs",
-                text: "A teacher works in a:",
-                options: ["Hospital", "Airport", "School", "Restaurant"],
-                correct: 2, // "School"
-                explanation: "El entorno clásico de trabajo para un docente (\"teacher\") es el colegio o escuela (\"school\")."
-            },
-            {
-                id: 22,
-                section: "Work and Jobs",
-                text: "A doctor works in a:",
-                options: ["Hospital", "Store", "School", "Office"],
-                correct: 0, // "Hospital"
-                explanation: "Los doctores y médicos realizan sus consultas y cirugías principalmente en un \"hospital\"."
-            },
-            {
-                id: 23,
-                section: "Work and Jobs",
-                text: "How do you say \"cajero\"?",
-                options: ["Waiter", "Driver", "Cashier", "Teacher"],
-                correct: 2, // "Cashier"
-                explanation: "La persona encargada del dinero y la caja en una tienda o supermercado es el \"cashier\"."
-            },
-            {
-                id: 24,
-                section: "Work and Jobs",
-                text: "\"Hard-working\" means:",
-                options: ["Perezoso", "Trabajador", "Tímido", "Inteligente"],
-                correct: 1, // "Trabajador"
-                explanation: "El adjetivo compuesto \"hard-working\" describe a una persona muy esforzada o \"trabajadora\"."
-            },
-            {
-                id: 25,
-                section: "Work and Jobs",
-                text: "Complete: \"I work _____ an office.\"",
-                options: ["in", "on", "at", "to"],
-                correct: 0, // "in"
-                explanation: "Para indicar trabajo dentro de un espacio cerrado de una oficina, la preposición indicada es \"in\" (in an office)."
-            },
+            // --- GRAMÁTICA INTERMEDIA (16-20) ---
+            { id: 16, section: "Gramática Intermedia", text: "Complete: \"If it rains, I ___ stay home.\"", options: ["will", "would", "am", "was"], correct: 0, explanation: "Primer condicional: \"If + presente, will + verbo\"." },
+            { id: 17, section: "Gramática Intermedia", text: "Complete: \"She has ___ finished her homework.\"", options: ["already", "yet", "ago", "since"], correct: 0, explanation: "\"Already\" se usa en oraciones afirmativas con presente perfecto." },
+            { id: 18, section: "Gramática Intermedia", text: "Complete: \"I ___ to Paris last year.\"", options: ["go", "goes", "went", "going"], correct: 2, explanation: "\"Went\" es el pasado simple irregular de \"go\", usado con \"last year\"." },
+            { id: 19, section: "Gramática Intermedia", text: "Choose the correct comparative: \"This book is ___ than that one.\"", options: ["interesting", "more interesting", "most interesting", "interestinger"], correct: 1, explanation: "Los adjetivos largos forman el comparativo con \"more\"." },
+            { id: 20, section: "Gramática Intermedia", text: "Complete: \"There ___ a lot of traffic yesterday.\"", options: ["was", "were", "is", "are"], correct: 0, explanation: "\"Traffic\" es incontable, por lo que se usa \"was\" en pasado." },
 
-            // --- PART VI: MIXED REVIEW (26-30) ---
-            {
-                id: 26,
-                section: "Mixed Review",
-                text: "\"I'm hungry\" means:",
-                options: ["Tengo sueño", "Tengo hambre", "Tengo frío", "Tengo sed"],
-                correct: 1, // "Tengo hambre"
-                explanation: "El adjetivo 'hungry' significa hambriento, de modo que \"I'm hungry\" significa \"Tengo hambre\"."
-            },
-            {
-                id: 27,
-                section: "Mixed Review",
-                text: "What does \"Maybe\" mean?",
-                options: ["Nunca", "Siempre", "Tal vez", "Claro"],
-                correct: 2, // "Tal vez"
-                explanation: "\"Maybe\" es un término para expresar probabilidad moderada, equivalente a \"Tal vez\" o \"Quizás\"."
-            },
-            {
-                id: 28,
-                section: "Mixed Review",
-                text: "Which expression means \"Voy en camino\"?",
-                options: ["I'm busy", "I'm on my way", "I'm tired", "I'm ready"],
-                correct: 1, // "I'm on my way"
-                explanation: "\"I'm on my way\" es la expresión idiomática en inglés para anunciar \"Voy en camino\" o \"Estoy yendo\"."
-            },
-            {
-                id: 29,
-                section: "Mixed Review",
-                text: "\"Do you speak English?\" means:",
-                options: ["¿Habla inglés?", "¿Dónde vive?", "¿Puede ayudarme?", "¿Cómo está?"],
-                correct: 0, // "¿Habla inglés?"
-                explanation: "Es la pregunta básica elemental utilizada mundialmente para averiguar si alguien habla idioma inglés."
-            },
-            {
-                id: 30,
-                section: "Mixed Review",
-                text: "Which sentence is correct?",
-                options: ["Does she cooks?", "Does she cook?", "Do she cook?", "Do she cooks?"],
-                correct: 1, // "Does she cook?"
-                explanation: "Al formular preguntas con el auxiliar de tercera persona \"Does\", el verbo principal vuelve a su forma infinitiva sin 's' (cook)."
-            }
+            // --- TIEMPOS VERBALES (21-25) ---
+            { id: 21, section: "Tiempos Verbales", text: "Complete: \"While I ___ dinner, the phone rang.\"", options: ["cook", "cooked", "was cooking", "have cooked"], correct: 2, explanation: "Pasado continuo (\"was cooking\") interrumpido por pasado simple (\"rang\")." },
+            { id: 22, section: "Tiempos Verbales", text: "Complete: \"I have never ___ sushi before.\"", options: ["eat", "ate", "eaten", "eating"], correct: 2, explanation: "El presente perfecto usa el participio pasado: \"eaten\"." },
+            { id: 23, section: "Tiempos Verbales", text: "Complete: \"She ___ here since 2020.\"", options: ["lives", "lived", "has lived", "is living"], correct: 2, explanation: "\"Since\" indica una acción que empezó en el pasado y continúa: presente perfecto." },
+            { id: 24, section: "Tiempos Verbales", text: "Complete: \"If I ___ more time, I would travel more.\"", options: ["have", "had", "has", "will have"], correct: 1, explanation: "Segundo condicional: \"If + pasado simple, would + verbo\"." },
+            { id: 25, section: "Tiempos Verbales", text: "Complete: \"This house ___ built in 1990.\"", options: ["is", "was", "has", "did"], correct: 1, explanation: "Voz pasiva en pasado simple: \"was + participio\"." },
+
+            // --- REPASO MIXTO (26-30) ---
+            { id: 26, section: "Repaso Mixto", text: "Choose the phrasal verb that means \"cancelar\":", options: ["Call off", "Call on", "Call up", "Call back"], correct: 0, explanation: "\"Call off\" significa cancelar un evento o plan." },
+            { id: 27, section: "Repaso Mixto", text: "What does \"in the long run\" mean?", options: ["Ahora mismo", "A largo plazo", "Nunca", "De repente"], correct: 1, explanation: "\"In the long run\" es una expresión que significa \"a largo plazo\"." },
+            { id: 28, section: "Repaso Mixto", text: "Complete: \"Not only ___ she smart, but also kind.\"", options: ["is", "was", "does", "did"], correct: 0, explanation: "Con \"Not only\" al inicio, se invierte el orden: \"is she\"." },
+            { id: 29, section: "Repaso Mixto", text: "Choose the correct reported speech: He said he ___ tired.", options: ["is", "was", "be", "being"], correct: 1, explanation: "En estilo indirecto, el presente cambia a pasado: \"was\"." },
+            { id: 30, section: "Repaso Mixto", text: "Which sentence is grammatically correct?", options: ["Neither of them are right.", "Neither of them is right.", "Neither of them be right.", "Neither of them right."], correct: 1, explanation: "\"Neither\" se trata como singular, por lo tanto usa \"is\"." }
         ];
 
-        // TOASTS PERSONALIZADOS EN LUGAR DE ALERT()
         function showToast(message, type = "info") {
             toastMessage.innerText = message;
-            
             if (type === "success") {
                 toastIcon.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>`;
                 toast.className = "fixed bottom-5 right-5 bg-slate-900 text-white py-3 px-5 rounded-xl shadow-2xl flex items-center space-x-3 transform translate-y-0 opacity-100 transition-all duration-300 z-50 border-l-4 border-emerald-500";
@@ -701,20 +401,13 @@
                 toastIcon.innerHTML = `<i class="fa-solid fa-circle-info text-indigo-400 text-lg"></i>`;
                 toast.className = "fixed bottom-5 right-5 bg-slate-900 text-white py-3 px-5 rounded-xl shadow-2xl flex items-center space-x-3 transform translate-y-0 opacity-100 transition-all duration-300 z-50 border-l-4 border-indigo-500";
             }
-
             setTimeout(() => {
                 toast.className = "fixed bottom-5 right-5 bg-slate-900 text-white py-3 px-5 rounded-xl shadow-2xl flex items-center space-x-3 transform translate-y-24 opacity-0 transition-all duration-300 z-50";
             }, 4000);
         }
 
-        // CONTROL DEL PANEL DOCENTE (Para editar el correo o el tiempo)
-        btnConfig.addEventListener("click", () => {
-            configPanel.classList.toggle("hidden");
-        });
-
-        closeConfig.addEventListener("click", () => {
-            configPanel.classList.add("hidden");
-        });
+        btnConfig.addEventListener("click", () => configPanel.classList.toggle("hidden"));
+        closeConfig.addEventListener("click", () => configPanel.classList.add("hidden"));
 
         saveConfig.addEventListener("click", () => {
             const email = teacherEmailInput.value.trim();
@@ -744,7 +437,6 @@
             showToast("Configuración de evaluación guardada con éxito.", "success");
         });
 
-        // INICIALIZACIÓN AL CARGAR LA PÁGINA
         window.addEventListener("DOMContentLoaded", () => {
             teacherEmailInput.value = teacherEmail;
             quizTimeInput.value = configQuizTime;
@@ -752,42 +444,34 @@
             secondsRemaining = configQuizTime * 60;
             totalQuizSeconds = configQuizTime * 60;
 
-            if (localStorage.getItem("teacher_email")) {
-                teacherBadge.classList.remove("hidden");
-            }
+            if (localStorage.getItem("teacher_email")) teacherBadge.classList.remove("hidden");
 
             renderQuestionsGrid();
         });
 
-        // INICIAR EVALUACIÓN
         formLogin.addEventListener("submit", () => {
             const name = studentNameInput.value.trim();
-            const group = studentClassInput.value.trim();
 
-            if (!name || !group) {
+            if (!name) {
                 showToast("Por favor, ingresa tu nombre completo para iniciar.", "error");
                 return;
             }
 
             studentData.name = name;
-            studentData.class = group;
 
             displayStudentName.innerText = name;
-            displayStudentClass.innerText = group;
             studentAvatar.innerText = name.charAt(0).toUpperCase();
 
-            // Cambiar pantallas
             screenLogin.classList.add("hidden");
             screenQuiz.classList.remove("hidden");
-            
+
             isQuizActive = true;
             startTimer();
             loadQuestion(0);
             updateProgress();
-            showToast(`Evaluación iniciada para ${name}. ¡Mucho éxito!`, "success");
+            showToast(`Prueba iniciada para ${name}. ¡Mucho éxito!`, "success");
         });
 
-        // CARGAR PREGUNTA ESPECÍFICA
         function loadQuestion(index) {
             currentQuestionIndex = index;
             const q = questions[index];
@@ -799,35 +483,26 @@
             optionsContainer.innerHTML = "";
             q.options.forEach((opt, optIdx) => {
                 const isSelected = userAnswers[q.id] === optIdx;
-                
                 const optionCard = document.createElement("button");
                 optionCard.className = `w-full text-left p-4 rounded-xl border-2 transition duration-200 flex items-center justify-between ${
-                    isSelected 
-                        ? "border-indigo-600 bg-indigo-50/50 text-indigo-950 font-medium shadow-sm" 
-                        : "border-slate-100 hover:border-slate-300 hover:bg-slate-50 text-slate-700"
+                    isSelected ? "border-indigo-600 bg-indigo-50/50 text-indigo-950 font-medium shadow-sm" : "border-slate-100 hover:border-slate-300 hover:bg-slate-50 text-slate-700"
                 }`;
-                
                 optionCard.innerHTML = `
                     <div class="flex items-center space-x-3">
-                        <span class="w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm ${
-                            isSelected ? "bg-indigo-600 text-white" : "bg-slate-100 text-slate-600"
-                        }">
+                        <span class="w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm ${isSelected ? "bg-indigo-600 text-white" : "bg-slate-100 text-slate-600"}">
                             ${String.fromCharCode(65 + optIdx)}
                         </span>
                         <span class="text-sm sm:text-base">${opt}</span>
                     </div>
                     ${isSelected ? `<i class="fa-solid fa-circle-check text-indigo-600 text-lg"></i>` : ""}
                 `;
-
                 optionCard.addEventListener("click", () => selectOption(q.id, optIdx));
                 optionsContainer.appendChild(optionCard);
             });
 
             btnPrev.disabled = index === 0;
             btnPrev.className = `px-5 py-3 rounded-xl font-bold transition flex items-center justify-center ${
-                index === 0 
-                    ? "bg-slate-100 text-slate-300 cursor-not-allowed" 
-                    : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                index === 0 ? "bg-slate-100 text-slate-300 cursor-not-allowed" : "bg-slate-100 text-slate-700 hover:bg-slate-200"
             }`;
 
             if (index === questions.length - 1) {
@@ -845,34 +520,21 @@
             userAnswers[questionId] = optionIdx;
             loadQuestion(currentQuestionIndex);
             updateProgress();
-            
             setTimeout(() => {
-                if (currentQuestionIndex < questions.length - 1) {
-                    loadQuestion(currentQuestionIndex + 1);
-                }
+                if (currentQuestionIndex < questions.length - 1) loadQuestion(currentQuestionIndex + 1);
             }, 300);
         }
 
         btnSkip.addEventListener("click", () => {
-            if (currentQuestionIndex < questions.length - 1) {
-                loadQuestion(currentQuestionIndex + 1);
-            } else {
-                showToast("Ya estás en la última pregunta de la evaluación.", "info");
-            }
+            if (currentQuestionIndex < questions.length - 1) loadQuestion(currentQuestionIndex + 1);
+            else showToast("Ya estás en la última pregunta de la evaluación.", "info");
         });
 
-        btnPrev.addEventListener("click", () => {
-            if (currentQuestionIndex > 0) {
-                loadQuestion(currentQuestionIndex - 1);
-            }
-        });
+        btnPrev.addEventListener("click", () => { if (currentQuestionIndex > 0) loadQuestion(currentQuestionIndex - 1); });
 
         btnNext.addEventListener("click", () => {
-            if (currentQuestionIndex < questions.length - 1) {
-                loadQuestion(currentQuestionIndex + 1);
-            } else {
-                confirmFinishQuiz();
-            }
+            if (currentQuestionIndex < questions.length - 1) loadQuestion(currentQuestionIndex + 1);
+            else confirmFinishQuiz();
         });
 
         function renderQuestionsGrid() {
@@ -882,9 +544,7 @@
                 button.id = `grid-btn-${idx}`;
                 button.className = "w-full py-2 rounded-lg text-center border font-bold text-xs transition duration-150";
                 button.innerText = q.id;
-                button.addEventListener("click", () => {
-                    if (isQuizActive) loadQuestion(idx);
-                });
+                button.addEventListener("click", () => { if (isQuizActive) loadQuestion(idx); });
                 questionsGrid.appendChild(button);
             });
         }
@@ -893,36 +553,26 @@
             questions.forEach((q, idx) => {
                 const btn = document.getElementById(`grid-btn-${idx}`);
                 if (!btn) return;
-
                 const isAnswered = userAnswers[q.id] !== undefined;
                 const isCurrent = currentQuestionIndex === idx;
-
-                if (isCurrent) {
-                    btn.className = "w-full py-2 rounded-lg text-center font-bold text-xs bg-indigo-50 border-2 border-indigo-500 text-indigo-700 shadow-sm";
-                } else if (isAnswered) {
-                    btn.className = "w-full py-2 rounded-lg text-center font-bold text-xs bg-emerald-500 border border-emerald-500 text-white";
-                } else {
-                    btn.className = "w-full py-2 rounded-lg text-center font-bold text-xs bg-slate-100 border border-slate-200 text-slate-500 hover:bg-slate-200";
-                }
+                if (isCurrent) btn.className = "w-full py-2 rounded-lg text-center font-bold text-xs bg-indigo-50 border-2 border-indigo-500 text-indigo-700 shadow-sm";
+                else if (isAnswered) btn.className = "w-full py-2 rounded-lg text-center font-bold text-xs bg-emerald-500 border border-emerald-500 text-white";
+                else btn.className = "w-full py-2 rounded-lg text-center font-bold text-xs bg-slate-100 border border-slate-200 text-slate-500 hover:bg-slate-200";
             });
         }
 
         function updateProgress() {
             const answeredCount = Object.keys(userAnswers).length;
             progressFraction.innerText = `${answeredCount} / ${questions.length}`;
-            const percentage = (answeredCount / questions.length) * 100;
-            progressBarFill.style.width = `${percentage}%`;
+            progressBarFill.style.width = `${(answeredCount / questions.length) * 100}%`;
         }
 
-        // CRONÓMETRO DE CONTROL
         function startTimer() {
             if (quizTimerInterval) clearInterval(quizTimerInterval);
             updateTimerUI();
-            
             quizTimerInterval = setInterval(() => {
                 secondsRemaining--;
                 updateTimerUI();
-
                 if (secondsRemaining <= 0) {
                     clearInterval(quizTimerInterval);
                     finishQuiz(true);
@@ -933,14 +583,8 @@
         function updateTimerUI() {
             const mins = Math.floor(secondsRemaining / 60);
             const secs = secondsRemaining % 60;
-            
-            const formattedMins = mins < 10 ? "0" + mins : mins;
-            const formattedSecs = secs < 10 ? "0" + secs : secs;
-            
-            timerText.innerText = `${formattedMins}:${formattedSecs}`;
-            const progressPct = (secondsRemaining / totalQuizSeconds) * 100;
-            timerProgress.style.width = `${progressPct}%`;
-
+            timerText.innerText = `${mins < 10 ? "0" + mins : mins}:${secs < 10 ? "0" + secs : secs}`;
+            timerProgress.style.width = `${(secondsRemaining / totalQuizSeconds) * 100}%`;
             if (secondsRemaining < 300) {
                 timerProgress.classList.remove("bg-indigo-600");
                 timerProgress.classList.add("bg-rose-500");
@@ -949,21 +593,15 @@
             }
         }
 
-        // MODAL PERSONALIZADO DE CONFIRMACIÓN DE ENTREGA
         function confirmFinishQuiz() {
             const answeredCount = Object.keys(userAnswers).length;
             const unansweredCount = questions.length - answeredCount;
-
-            let confirmMessage = "";
-            if (unansweredCount > 0) {
-                confirmMessage = `Tienes ${unansweredCount} preguntas sin responder de tu taller. ¿Estás seguro de que quieres entregar la evaluación al profesor Sebastián?`;
-            } else {
-                confirmMessage = `Has completado las 30 preguntas de tu taller. ¿Deseas entregar la prueba y calificar tus resultados de inmediato?`;
-            }
+            let confirmMessage = unansweredCount > 0
+                ? `Tienes ${unansweredCount} preguntas sin responder. ¿Estás seguro de que quieres entregar la prueba a Teacher Seba?`
+                : `Has completado las 30 preguntas. ¿Deseas entregar la prueba y ver tus resultados de inmediato?`;
 
             const modalBackdrop = document.createElement("div");
             modalBackdrop.className = "fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 z-50";
-            
             const modalContent = document.createElement("div");
             modalContent.className = "bg-white rounded-2xl p-6 max-w-sm w-full shadow-2xl border border-slate-100 space-y-4";
             modalContent.innerHTML = `
@@ -971,33 +609,20 @@
                     <div class="mx-auto w-12 h-12 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-xl mb-3">
                         <i class="fa-solid fa-circle-question"></i>
                     </div>
-                    <h4 class="font-extrabold text-slate-800 text-lg">¿Entregar Evaluación?</h4>
+                    <h4 class="font-extrabold text-slate-800 text-lg">¿Entregar Prueba?</h4>
                     <p class="text-sm text-slate-500 mt-2">${confirmMessage}</p>
                 </div>
                 <div class="flex gap-3 mt-4">
-                    <button id="modal-cancel" class="flex-1 py-2 px-4 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl font-bold text-sm transition">
-                        Seguir respondiendo
-                    </button>
-                    <button id="modal-confirm" class="flex-1 py-2 px-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-bold text-sm transition">
-                        Entregar prueba
-                    </button>
+                    <button id="modal-cancel" class="flex-1 py-2 px-4 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl font-bold text-sm transition">Seguir respondiendo</button>
+                    <button id="modal-confirm" class="flex-1 py-2 px-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-bold text-sm transition">Entregar prueba</button>
                 </div>
             `;
-            
             modalBackdrop.appendChild(modalContent);
             document.body.appendChild(modalBackdrop);
-
-            document.getElementById("modal-cancel").addEventListener("click", () => {
-                modalBackdrop.remove();
-            });
-
-            document.getElementById("modal-confirm").addEventListener("click", () => {
-                modalBackdrop.remove();
-                finishQuiz(false);
-            });
+            document.getElementById("modal-cancel").addEventListener("click", () => modalBackdrop.remove());
+            document.getElementById("modal-confirm").addEventListener("click", () => { modalBackdrop.remove(); finishQuiz(false); });
         }
 
-        // FINALIZACIÓN DE PRUEBA Y CÁLCULOS
         function finishQuiz(timeOut = false) {
             isQuizActive = false;
             if (quizTimerInterval) clearInterval(quizTimerInterval);
@@ -1008,113 +633,66 @@
             const timeSpentText = `${elapsedMins.toString().padStart(2, '0')}:${elapsedSecs.toString().padStart(2, '0')}`;
 
             let correctAnswersCount = 0;
-            questions.forEach(q => {
-                if (userAnswers[q.id] !== undefined && userAnswers[q.id] === q.correct) {
-                    correctAnswersCount++;
-                }
-            });
+            questions.forEach(q => { if (userAnswers[q.id] !== undefined && userAnswers[q.id] === q.correct) correctAnswersCount++; });
 
             const scorePercent = Math.round((correctAnswersCount / questions.length) * 100);
 
-            // Actualizar UI
             scoreDisplay.innerText = `${correctAnswersCount} / ${questions.length}`;
             percentageDisplay.innerText = `${scorePercent}%`;
             timeSpentDisplay.innerText = timeSpentText;
 
-            // Feedback en español
-            if (scorePercent >= 90) {
-                performanceLabel.innerText = "¡Excelente nivel de inglés! 🌟";
-                performanceLabel.className = "text-xs font-bold text-emerald-600 mt-1";
-            } else if (scorePercent >= 70) {
-                performanceLabel.innerText = "Muy buen desempeño 👍";
-                performanceLabel.className = "text-xs font-bold text-indigo-600 mt-1";
-            } else if (scorePercent >= 50) {
-                performanceLabel.innerText = "Aprobado. Sigue practicando 📖";
-                performanceLabel.className = "text-xs font-bold text-amber-600 mt-1";
-            } else {
-                performanceLabel.innerText = "Necesitas repasar las lecciones 🔍";
-                performanceLabel.className = "text-xs font-bold text-rose-600 mt-1";
-            }
+            let levelText = "";
+            if (scorePercent >= 90) { levelText = "¡Excelente nivel! Cerca de un B2/C1 🌟"; performanceLabel.className = "text-xs font-bold text-emerald-600 mt-1"; }
+            else if (scorePercent >= 70) { levelText = "Muy buen nivel, aprox. B1 👍"; performanceLabel.className = "text-xs font-bold text-indigo-600 mt-1"; }
+            else if (scorePercent >= 50) { levelText = "Nivel intermedio-bajo, aprox. A2 📖"; performanceLabel.className = "text-xs font-bold text-amber-600 mt-1"; }
+            else { levelText = "Nivel inicial, aprox. A1 🔍"; performanceLabel.className = "text-xs font-bold text-rose-600 mt-1"; }
+            performanceLabel.innerText = levelText;
 
-            if (timeOut) {
-                document.getElementById("completion-subtitle").innerText = "La prueba ha finalizado debido al límite de tiempo. Tus respuestas fueron recopiladas.";
-            }
+            if (timeOut) document.getElementById("completion-subtitle").innerText = "La prueba finalizó por límite de tiempo. Tus respuestas fueron registradas.";
 
             renderResultsDetailed();
 
-            // Desplegar pantalla final
             screenQuiz.classList.add("hidden");
             screenResults.classList.remove("hidden");
 
-            if (scorePercent >= 60) {
-                confetti({
-                    particleCount: 150,
-                    spread: 80,
-                    origin: { y: 0.6 }
-                });
-            }
+            if (scorePercent >= 60) confetti({ particleCount: 150, spread: 80, origin: { y: 0.6 } });
 
-            // ENVIAR AUTOMÁTICAMENTE LOS RESULTADOS POR DETRÁS (FormSubmit mediante Iframe Invisible + Fetch AJAX de respaldo)
             sendAutomaticResults(correctAnswersCount, scorePercent, timeSpentText);
         }
 
-        // FUNCIÓN CLAVE: ENVÍO AUTOMÁTICO AL PROFESOR
         function sendAutomaticResults(correctCount, percentage, timeSpent) {
             const sendingStatusContainer = document.getElementById("email-sending-status");
             const reportData = generatePlainTextReport();
 
-            // Configurar dinámicamente el destinatario basándonos en la configuración actual
             document.getElementById("hidden-email-form").action = `https://formsubmit.co/${teacherEmail}`;
 
-            // Asignar los valores a los inputs del formulario oculto
             document.getElementById("hidden-student-name").value = studentData.name;
-            document.getElementById("hidden-student-class").value = studentData.class;
             document.getElementById("hidden-score").value = `${correctCount} / 30`;
             document.getElementById("hidden-percentage").value = `${percentage}%`;
             document.getElementById("hidden-time").value = timeSpent;
-            document.getElementById("hidden-subject").value = `Resultados Taller de Inglés: ${studentData.name} - ${studentData.class}`;
+            document.getElementById("hidden-subject").value = `Prueba de Nivelación: ${studentData.name}`;
             document.getElementById("hidden-report").value = reportData;
 
-            // MÉTODO DUAL SEGURO: 
-            // 1. Enviamos primero por Fetch AJAX de forma transparente. FormSubmit acepta AJAX CORS perfectamente si va con un _url válido.
             fetch(`https://formsubmit.co/ajax/${teacherEmail}`, {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Accept": "application/json"
-                },
+                headers: { "Content-Type": "application/json", "Accept": "application/json" },
                 body: JSON.stringify({
                     Estudiante: studentData.name,
-                    Curso_Taller: studentData.class,
                     Puntaje: `${correctCount} / 30`,
                     Rendimiento: `${percentage}%`,
                     Tiempo_Empleado: timeSpent,
-                    _subject: `Resultados Taller de Inglés: ${studentData.name} - ${studentData.class}`,
+                    _subject: `Prueba de Nivelación: ${studentData.name}`,
                     _captcha: "false",
-                    _url: "https://intranet-taller-ingles.github.io/evaluacion.html", // VITAL para saltear bloqueos de preview local
+                    _url: "https://teacherseba.com/prueba-nivelacion.html",
                     Reporte_Detallado: reportData
                 })
             })
-            .then(res => {
-                if (res.ok) {
-                    showSuccessStatus();
-                } else {
-                    // Si falla por alguna razón del servidor, disparamos el fallback tradicional por el iframe
-                    triggerFallbackForm();
-                }
-            })
-            .catch(err => {
-                console.warn("AJAX falló por sandbox o CORS local, enviando por iframe fallback...", err);
-                triggerFallbackForm();
-            });
+            .then(res => { if (res.ok) showSuccessStatus(); else triggerFallbackForm(); })
+            .catch(err => { console.warn("AJAX falló, enviando por iframe fallback...", err); triggerFallbackForm(); });
 
             function triggerFallbackForm() {
-                try {
-                    document.getElementById("hidden-email-form").submit();
-                    showSuccessStatus();
-                } catch (e) {
-                    showErrorStatus();
-                }
+                try { document.getElementById("hidden-email-form").submit(); showSuccessStatus(); }
+                catch (e) { showErrorStatus(); }
             }
 
             function showSuccessStatus() {
@@ -1124,9 +702,9 @@
                         <i class="fa-solid fa-circle-check text-xl"></i>
                     </div>
                     <div>
-                        <h4 class="font-bold text-emerald-900 text-base">Tus resultados ya fueron enviados al profesor</h4>
-                        <p class="text-xs text-emerald-700 mt-0.5">La entrega se registró con éxito en la casilla de tu docente <strong class="underline">${teacherEmail}</strong>.</p>
-                        <p class="text-[10px] text-emerald-600 mt-1 italic">Nota para el profesor Sebastián: Revisa de inmediato tu bandeja de entrada o Spam de <strong>anglosaf@gmail.com</strong> para activar el buzón de FormSubmit si es tu primer test.</p>
+                        <h4 class="font-bold text-emerald-900 text-base">Tus resultados ya fueron enviados a Teacher Seba</h4>
+                        <p class="text-xs text-emerald-700 mt-0.5">La entrega se registró con éxito en <strong class="underline">${teacherEmail}</strong>.</p>
+                        <p class="text-[10px] text-emerald-600 mt-1 italic">Nota: revisa tu bandeja de entrada o Spam de ${teacherEmail} para activar el buzón de FormSubmit si es tu primer envío.</p>
                     </div>
                 `;
                 showToast("Resultados enviados automáticamente con éxito.", "success");
@@ -1147,23 +725,15 @@
             }
         }
 
-        // GENERAR REVISIÓN DE CADA PREGUNTA
         function renderResultsDetailed() {
             resultsDetailedContainer.innerHTML = "";
-            
             questions.forEach((q) => {
                 const studentAnsIndex = userAnswers[q.id];
                 const isCorrect = studentAnsIndex !== undefined && studentAnsIndex === q.correct;
                 const wasSkipped = studentAnsIndex === undefined;
 
                 const detailCard = document.createElement("div");
-                detailCard.className = `p-4 rounded-xl border ${
-                    isCorrect 
-                        ? "bg-emerald-50 border-emerald-100" 
-                        : wasSkipped 
-                            ? "bg-amber-50 border-amber-100" 
-                            : "bg-rose-50 border-rose-100"
-                }`;
+                detailCard.className = `p-4 rounded-xl border ${isCorrect ? "bg-emerald-50 border-emerald-100" : wasSkipped ? "bg-amber-50 border-amber-100" : "bg-rose-50 border-rose-100"}`;
 
                 let answerTextHtml = "";
                 if (wasSkipped) {
@@ -1183,37 +753,26 @@
 
                 detailCard.innerHTML = `
                     <div class="flex justify-between items-start">
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-white/80 px-2 py-0.5 rounded-full border">
-                            ${q.section}
-                        </span>
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-white/80 px-2 py-0.5 rounded-full border">${q.section}</span>
                         <span class="text-xs font-bold text-slate-400">Pregunta ${q.id}</span>
                     </div>
                     <h4 class="font-bold text-slate-800 text-sm mt-2">${q.text}</h4>
-                    <div class="mt-2 space-y-1">
-                        ${answerTextHtml}
-                    </div>
+                    <div class="mt-2 space-y-1">${answerTextHtml}</div>
                     <p class="text-xs text-slate-500 mt-2 italic bg-white/40 p-2 rounded-lg border border-dashed">${q.explanation}</p>
                 `;
-
                 resultsDetailedContainer.appendChild(detailCard);
             });
         }
 
-        // GENERAR INFORME EN FORMATO PLANO (TEXTO COMPACTO)
         function generatePlainTextReport() {
             let correctCount = 0;
-            questions.forEach(q => {
-                if (userAnswers[q.id] !== undefined && userAnswers[q.id] === q.correct) {
-                    correctCount++;
-                }
-            });
+            questions.forEach(q => { if (userAnswers[q.id] !== undefined && userAnswers[q.id] === q.correct) correctCount++; });
             const percent = Math.round((correctCount / questions.length) * 100);
 
             let report = `==================================================\n`;
-            report += `REPORT DE EXAMEN - INTRANET ENGLISH WORKSHOP\n`;
+            report += `REPORTE - PRUEBA DE NIVELACIÓN DE INGLÉS\n`;
             report += `==================================================\n`;
             report += `Nombre del Estudiante: ${studentData.name}\n`;
-            report += `Curso / Taller: ${studentData.class}\n`;
             report += `Fecha y Hora: ${new Date().toLocaleString()}\n`;
             report += `Puntaje Obtenido: ${correctCount} de ${questions.length} respuestas correctas\n`;
             report += `Porcentaje de Rendimiento: ${percent}%\n`;
@@ -1236,7 +795,6 @@
             return report;
         }
 
-        // COPIAR AL PORTAPAPELES
         btnCopyReport.addEventListener("click", () => {
             const reportText = generatePlainTextReport();
             const tempTextArea = document.createElement("textarea");
@@ -1245,44 +803,33 @@
             document.body.appendChild(tempTextArea);
             tempTextArea.focus();
             tempTextArea.select();
-            
             try {
                 const successful = document.execCommand('copy');
-                if (successful) {
-                    showToast("¡Reporte completo copiado al portapapeles con éxito!", "success");
-                } else {
-                    showToast("No se pudo copiar el reporte automáticamente.", "error");
-                }
+                showToast(successful ? "¡Reporte completo copiado al portapapeles con éxito!" : "No se pudo copiar el reporte automáticamente.", successful ? "success" : "error");
             } catch (err) {
                 showToast("Error al copiar reporte. Inténtalo manualmente.", "error");
             }
-            
             document.body.removeChild(tempTextArea);
         });
 
-        // DESCARGAR REPORTE COMO ARCHIVO .TXT
         btnDownloadReport.addEventListener("click", () => {
             const textContent = generatePlainTextReport();
             const blob = new Blob([textContent], { type: "text/plain;charset=utf-8" });
             const url = URL.createObjectURL(blob);
-            
             const link = document.createElement("a");
             link.href = url;
             const safeName = studentData.name.replace(/[^a-z0-9]/gi, '_').toLowerCase();
-            link.download = `reporte_ingles_${safeName}.txt`;
+            link.download = `reporte_nivelacion_${safeName}.txt`;
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
             URL.revokeObjectURL(url);
-            
             showToast("Resultados descargados como archivo de texto (.txt).", "success");
         });
 
-        // ACCIÓN RECOMENZAR LA PRUEBA (Utilizando modal en vez de confirm nativo)
         btnRestart.addEventListener("click", () => {
             const modalBackdrop = document.createElement("div");
             modalBackdrop.className = "fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 z-50";
-            
             const modalContent = document.createElement("div");
             modalContent.className = "bg-white rounded-2xl p-6 max-w-sm w-full shadow-2xl border border-slate-100 space-y-4";
             modalContent.innerHTML = `
@@ -1291,35 +838,25 @@
                         <i class="fa-solid fa-triangle-exclamation"></i>
                     </div>
                     <h4 class="font-extrabold text-slate-800 text-lg">¿Dar prueba de nuevo?</h4>
-                    <p class="text-sm text-slate-500 mt-2">Esta acción eliminará tus respuestas actuales en esta pantalla. ¿Deseas continuar?</p>
+                    <p class="text-sm text-slate-500 mt-2">Esta acción eliminará tus respuestas actuales. ¿Deseas continuar?</p>
                 </div>
                 <div class="flex gap-3 mt-4">
-                    <button id="modal-restart-cancel" class="flex-1 py-2 px-4 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl font-bold text-sm transition">
-                        No, cancelar
-                    </button>
-                    <button id="modal-restart-confirm" class="flex-1 py-2 px-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-bold text-sm transition">
-                        Sí, reiniciar
-                    </button>
+                    <button id="modal-restart-cancel" class="flex-1 py-2 px-4 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl font-bold text-sm transition">No, cancelar</button>
+                    <button id="modal-restart-confirm" class="flex-1 py-2 px-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-bold text-sm transition">Sí, reiniciar</button>
                 </div>
             `;
-            
             modalBackdrop.appendChild(modalContent);
             document.body.appendChild(modalBackdrop);
 
-            document.getElementById("modal-restart-cancel").addEventListener("click", () => {
-                modalBackdrop.remove();
-            });
+            document.getElementById("modal-restart-cancel").addEventListener("click", () => modalBackdrop.remove());
 
             document.getElementById("modal-restart-confirm").addEventListener("click", () => {
                 modalBackdrop.remove();
-                
-                // Reinicio de todos los estados
                 userAnswers = {};
                 currentQuestionIndex = 0;
                 secondsRemaining = configQuizTime * 60;
                 studentNameInput.value = "";
-                
-                // Limpiar el estado visual de envío automático
+
                 const sendingStatusContainer = document.getElementById("email-sending-status");
                 sendingStatusContainer.className = "bg-amber-50 border border-amber-200 rounded-3xl p-6 flex items-center space-x-4";
                 sendingStatusContainer.innerHTML = `
@@ -1334,15 +871,14 @@
 
                 screenResults.classList.add("hidden");
                 screenLogin.classList.remove("hidden");
-                
+
                 if (quizTimerInterval) clearInterval(quizTimerInterval);
                 renderQuestionsGrid();
                 updateProgress();
-                
+
                 showToast("Evaluación reiniciada. Puedes comenzar de nuevo.", "info");
             });
         });
-
     </script>
 </body>
 </html>
