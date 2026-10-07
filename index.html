@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prueba de Nivelación de Inglés - Teacher Seba</title>
+    <title>Prueba de Gramática - Puertas al Inglés - Teacher Seba</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
@@ -27,7 +27,7 @@
                 </div>
                 <div>
                     <h1 class="font-bold text-lg leading-tight tracking-wide">TEACHER SEBA</h1>
-                    <p class="text-xs text-indigo-200">Prueba de nivelación de inglés</p>
+                    <p class="text-xs text-indigo-200">Prueba de Gramática · Puertas al Inglés</p>
                 </div>
             </div>
             <div class="flex items-center space-x-4">
@@ -61,8 +61,8 @@
                 </div>
                 <div>
                     <label class="block text-sm font-semibold text-slate-700 mb-1">Tiempo Límite de la prueba (minutos):</label>
-                    <input type="number" id="quiz-time" min="5" max="120" value="30" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                    <p class="text-xs text-slate-500 mt-1">Por defecto: 30 minutos para responder las 30 preguntas.</p>
+                    <input type="number" id="quiz-time" min="5" max="120" value="50" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <p class="text-xs text-slate-500 mt-1">Por defecto: 50 minutos para responder las 52 preguntas.</p>
                 </div>
             </div>
             <div class="mt-4 flex justify-end">
@@ -75,9 +75,9 @@
         <!-- 1. LOGIN -->
         <section id="screen-login" class="bg-white rounded-3xl shadow-xl border border-slate-100 p-8 max-w-md w-full mx-auto transition-all duration-300">
             <div class="text-center mb-8">
-                <span class="bg-indigo-50 text-indigo-600 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase">Placement Test</span>
-                <h2 class="text-2xl font-extrabold text-slate-800 mt-3">Prueba de Nivelación de Inglés</h2>
-                <p class="text-slate-500 mt-1 text-sm">Responde para que Teacher Seba conozca tu nivel actual antes de comenzar tus clases.</p>
+                <span class="bg-indigo-50 text-indigo-600 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase">Evaluación Oficial</span>
+                <h2 class="text-2xl font-extrabold text-slate-800 mt-3">Prueba de Gramática</h2>
+                <p class="text-slate-500 mt-1 text-sm">Taller "Puertas al Inglés". Responde con atención, tus resultados le llegarán a Teacher Seba.</p>
             </div>
 
             <form id="form-login" class="space-y-5" onsubmit="event.preventDefault();">
@@ -97,9 +97,9 @@
                         <i class="fa-solid fa-circle-info mr-2"></i> Detalles de la prueba:
                     </div>
                     <ul class="list-disc list-inside space-y-1 pl-1">
-                        <li>30 preguntas de gramática y vocabulario, de nivel básico a intermedio.</li>
-                        <li>Secciones: Vocabulario básico, Gramática básica, Vocabulario intermedio, Gramática intermedia, Tiempos verbales y Repaso mixto.</li>
-                        <li>Tiempo estimado máximo: <span id="info-time">30</span> minutos.</li>
+                        <li>52 preguntas de alternativas sobre gramática del Taller "Puertas al Inglés".</li>
+                        <li>Secciones: Verb To Be, Present Simple, Questions DO/DOES, Verb+To/Going to, Modal Verbs, Connectors, Phrasal Verbs y Connected Speech.</li>
+                        <li>Tiempo estimado máximo: <span id="info-time">50</span> minutos.</li>
                         <li>Al finalizar, tus resultados se enviarán automáticamente a Teacher Seba.</li>
                     </ul>
                 </div>
@@ -120,7 +120,7 @@
                         <div class="bg-indigo-100 text-indigo-700 font-extrabold w-10 h-10 rounded-full flex items-center justify-center text-lg" id="student-avatar">U</div>
                         <div>
                             <h4 class="font-bold text-slate-800 text-sm leading-tight truncate max-w-[150px]" id="display-student-name">Estudiante</h4>
-                            <p class="text-xs text-slate-500 truncate max-w-[150px]">Prueba de Nivelación</p>
+                            <p class="text-xs text-slate-500 truncate max-w-[150px]">Prueba de Gramática</p>
                         </div>
                     </div>
                     <div class="space-y-1">
@@ -130,7 +130,7 @@
                         </div>
                         <div class="flex items-center space-x-2">
                             <i class="fa-regular fa-clock text-xl text-indigo-600" id="clock-icon"></i>
-                            <span id="timer-text" class="text-2xl font-black text-slate-800 tracking-tight">30:00</span>
+                            <span id="timer-text" class="text-2xl font-black text-slate-800 tracking-tight">50:00</span>
                         </div>
                         <div class="w-full bg-slate-100 rounded-full h-1.5 mt-2 overflow-hidden">
                             <div id="timer-progress" class="bg-indigo-600 h-1.5 rounded-full transition-all duration-1000" style="width: 100%"></div>
@@ -141,7 +141,7 @@
                 <div class="bg-white border border-slate-100 rounded-2xl p-5 shadow-sm">
                     <div class="flex justify-between items-center mb-3">
                         <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Progreso Global</span>
-                        <span class="text-xs font-extrabold text-indigo-600" id="progress-fraction">0 / 30</span>
+                        <span class="text-xs font-extrabold text-indigo-600" id="progress-fraction">0 / 52</span>
                     </div>
                     <div class="w-full bg-slate-100 rounded-full h-3 mb-4 overflow-hidden">
                         <div id="progress-bar-fill" class="bg-indigo-600 h-full rounded-full transition-all duration-300" style="width: 0%"></div>
@@ -163,7 +163,7 @@
                             <div>
                                 <span id="question-section-tag" class="text-xs font-extrabold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full uppercase tracking-wider">Sección 1</span>
                             </div>
-                            <span id="question-number-display" class="text-sm font-bold text-slate-400">Pregunta 1 de 30</span>
+                            <span id="question-number-display" class="text-sm font-bold text-slate-400">Pregunta 1 de 52</span>
                         </div>
                         <div class="mb-8">
                             <h3 class="text-lg sm:text-xl font-bold text-slate-800 leading-snug" id="question-text-title">Cargando pregunta...</h3>
@@ -197,18 +197,18 @@
                     <i class="fa-solid fa-circle-check"></i>
                 </div>
                 <h2 class="text-3xl font-extrabold text-slate-800">¡Prueba Completada!</h2>
-                <p class="text-slate-500 mt-1" id="completion-subtitle">Gracias por completar tu prueba de nivelación.</p>
+                <p class="text-slate-500 mt-1" id="completion-subtitle">Gracias por completar la Prueba de Gramática — Puertas al Inglés.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 text-center">
                 <div class="bg-slate-50 border border-slate-100 rounded-2xl p-5">
                     <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Puntuación Final</p>
-                    <p class="text-4xl font-black text-indigo-600 mt-2" id="score-display">0 / 30</p>
+                    <p class="text-4xl font-black text-indigo-600 mt-2" id="score-display">0 / 52</p>
                     <p class="text-xs text-slate-500 mt-1">Preguntas correctas</p>
                 </div>
                 <div class="bg-slate-50 border border-slate-100 rounded-2xl p-5">
-                    <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Rendimiento</p>
-                    <p class="text-4xl font-black text-emerald-600 mt-2" id="percentage-display">0%</p>
+                    <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Nota</p>
+                    <p class="text-4xl font-black text-emerald-600 mt-2" id="percentage-display">1,0</p>
                     <p class="text-xs text-slate-500 mt-1" id="performance-label">Buen trabajo</p>
                 </div>
                 <div class="bg-slate-50 border border-slate-100 rounded-2xl p-5">
@@ -256,7 +256,7 @@
 
             <div class="mt-8 pt-6 border-t flex justify-between">
                 <button id="btn-restart" class="px-5 py-3 border border-slate-300 text-slate-600 font-bold rounded-xl hover:bg-slate-50 transition">Dar prueba de nuevo</button>
-                <span class="text-xs text-slate-400 self-center">Prueba de Nivelación - Teacher Seba</span>
+                <span class="text-xs text-slate-400 self-center">Prueba de Gramática - Teacher Seba</span>
             </div>
         </section>
 
@@ -270,18 +270,19 @@
     <form id="hidden-email-form" action="https://formsubmit.co/anglosaf@gmail.com" method="POST" target="hidden-iframe" class="hidden" style="display:none;">
         <input type="hidden" name="Estudiante" id="hidden-student-name">
         <input type="hidden" name="Puntaje" id="hidden-score">
+        <input type="hidden" name="Nota" id="hidden-nota">
         <input type="hidden" name="Rendimiento" id="hidden-percentage">
         <input type="hidden" name="Tiempo_Empleado" id="hidden-time">
         <input type="hidden" name="_subject" id="hidden-subject">
         <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_url" value="https://teacherseba.com/prueba-nivelacion.html">
+        <input type="hidden" name="_url" value="https://test.teacherseba.com">
         <textarea name="Reporte_Detallado" id="hidden-report" class="hidden" style="display:none;"></textarea>
     </form>
     <iframe name="hidden-iframe" id="hidden-iframe" class="hidden" style="display:none; width:0; height:0; border:0;"></iframe>
 
     <footer class="bg-slate-100 border-t border-slate-200 py-6 text-center text-xs text-slate-500 mt-auto">
         <p>© 2026 Teacher Seba - Clases de Inglés. Todos los derechos reservados.</p>
-        <p class="mt-1 text-slate-400">Prueba de nivelación diseñada para conocer tu punto de partida.</p>
+        <p class="mt-1 text-slate-400">Prueba de Gramática del Taller "Puertas al Inglés".</p>
     </footer>
 
     <script>
@@ -289,12 +290,24 @@
         let userAnswers = {};
         let studentData = { name: "" };
         let quizTimerInterval = null;
-        let secondsRemaining = 1800;
-        let totalQuizSeconds = 1800;
+        let secondsRemaining = 3000;
+        let totalQuizSeconds = 3000;
         let isQuizActive = false;
 
         let teacherEmail = localStorage.getItem("teacher_email") || "anglosaf@gmail.com";
-        let configQuizTime = parseInt(localStorage.getItem("quiz_time_limit")) || 30;
+        let configQuizTime = parseInt(localStorage.getItem("quiz_time_limit")) || 50;
+
+        // Escala oficial de nota (60% de exigencia) sobre el máximo de puntos de la prueba
+        function calcNota(score, max) {
+            const passing = max * 0.6;
+            let nota;
+            if (score >= passing) {
+                nota = 4 + (score - passing) / (max - passing) * 3;
+            } else {
+                nota = 1 + (score / passing) * 3;
+            }
+            return nota.toFixed(1).replace('.', ',');
+        }
 
         const screenLogin = document.getElementById("screen-login");
         const screenQuiz = document.getElementById("screen-quiz");
@@ -346,47 +359,73 @@
 
         // BANCO DE PREGUNTAS: GRAMÁTICA Y VOCABULARIO (BÁSICO -> INTERMEDIO)
         const questions = [
-            // --- VOCABULARIO BÁSICO (1-5) ---
-            { id: 1, section: "Vocabulario Básico", text: "What is the opposite of \"hot\"?", options: ["Big", "Cold", "Fast", "Happy"], correct: 1, explanation: "\"Cold\" es el antónimo directo de \"hot\" (caliente)." },
-            { id: 2, section: "Vocabulario Básico", text: "What is the English word for \"fregadero\" (lavaplatos)?", options: ["Sink", "Sofa", "Shelf", "Stove"], correct: 0, explanation: "\"Sink\" es el fregadero o lavaplatos de la cocina." },
-            { id: 3, section: "Vocabulario Básico", text: "What is a synonym for \"big\"?", options: ["Small", "Large", "Short", "Thin"], correct: 1, explanation: "\"Large\" es sinónimo de \"big\" (grande)." },
-            { id: 4, section: "Vocabulario Básico", text: "Which word means \"rápido\"?", options: ["Slow", "Fast", "Late", "Loud"], correct: 1, explanation: "\"Fast\" se traduce como \"rápido\"." },
-            { id: 5, section: "Vocabulario Básico", text: "What is the plural of \"child\"?", options: ["Childs", "Childes", "Children", "Childrens"], correct: 2, explanation: "\"Child\" tiene un plural irregular: \"children\"." },
+            // --- I. VERB TO BE ---
+            { id: 1, section: "I. Verb To Be", text: "Complete: \"I ___ from Chile.\"", options: ["is", "am", "are"], correct: 1, explanation: "Con el pronombre 'I' siempre se usa 'am'." },
+            { id: 2, section: "I. Verb To Be", text: "Complete: \"She ___ a teacher.\"", options: ["am", "is", "are"], correct: 1, explanation: "Con la tercera persona singular (she) se usa 'is'." },
+            { id: 3, section: "I. Verb To Be", text: "Complete: \"They ___ my friends.\"", options: ["is", "am", "are"], correct: 2, explanation: "Con sujetos plurales (they) se usa 'are'." },
+            { id: 4, section: "I. Verb To Be", text: "Complete: \"We ___ in class.\"", options: ["am", "is", "are"], correct: 2, explanation: "Con 'we' (plural) se usa 'are'." },
+            { id: 5, section: "I. Verb To Be", text: "Complete: \"He ___ an engineer.\"", options: ["are", "am", "is"], correct: 2, explanation: "Con la tercera persona singular (he) se usa 'is'." },
+            { id: 6, section: "I. Verb To Be", text: "Complete: \"You ___ very friendly.\"", options: ["am", "is", "are"], correct: 2, explanation: "Con 'you' siempre se usa 'are'." },
 
-            // --- GRAMÁTICA BÁSICA (6-10) ---
-            { id: 6, section: "Gramática Básica", text: "Complete: \"She ___ a teacher.\"", options: ["am", "is", "are", "be"], correct: 1, explanation: "Con \"she\" (tercera persona singular) se usa \"is\"." },
-            { id: 7, section: "Gramática Básica", text: "Choose the correct sentence:", options: ["I have two brothers.", "I has two brothers.", "I haves two brothers.", "I having two brothers."], correct: 0, explanation: "Con \"I\" el verbo \"have\" no cambia en presente simple." },
-            { id: 8, section: "Gramática Básica", text: "Complete: \"They ___ playing football now.\"", options: ["is", "am", "are", "be"], correct: 2, explanation: "Con el sujeto plural \"they\" se usa \"are\" en presente continuo." },
-            { id: 9, section: "Gramática Básica", text: "Choose the correct question word: \"___ do you live?\"", options: ["What", "Who", "Where", "When"], correct: 2, explanation: "\"Where\" se usa para preguntar por un lugar." },
-            { id: 10, section: "Gramática Básica", text: "Choose the correct plural: \"one book, two ___\"", options: ["book", "bookes", "books", "bookies"], correct: 2, explanation: "El plural regular de \"book\" es \"books\"." },
+            // --- II. PRESENT SIMPLE ---
+            { id: 7, section: "II. Present Simple", text: "My sister ___ in Santiago.", options: ["live", "lives", "living"], correct: 1, explanation: "Con la tercera persona singular (she) el verbo lleva 's': lives." },
+            { id: 8, section: "II. Present Simple", text: "I ___ English every day.", options: ["study", "studies", "studying"], correct: 0, explanation: "Con 'I' el verbo va en su forma base: study." },
+            { id: 9, section: "II. Present Simple", text: "He ___ guitar very well.", options: ["play", "plays", "to play"], correct: 1, explanation: "Con 'he' el verbo lleva 's': plays." },
+            { id: 10, section: "II. Present Simple", text: "They ___ from home.", options: ["works", "work", "working"], correct: 1, explanation: "Con 'they' (plural) el verbo va sin 's': work." },
+            { id: 11, section: "II. Present Simple", text: "She ___ books at night.", options: ["read", "reads", "reading"], correct: 1, explanation: "Con 'she' el verbo lleva 's': reads." },
+            { id: 12, section: "II. Present Simple", text: "My phone ___ very well.", options: ["work", "works", "working"], correct: 1, explanation: "'Phone' es tercera persona singular, el verbo lleva 's': works." },
 
-            // --- VOCABULARIO INTERMEDIO (11-15) ---
-            { id: 11, section: "Vocabulario Intermedio", text: "What does \"exhausted\" mean?", options: ["Very happy", "Very tired", "Very angry", "Very hungry"], correct: 1, explanation: "\"Exhausted\" significa extremadamente cansado." },
-            { id: 12, section: "Vocabulario Intermedio", text: "Choose a synonym for \"afraid\":", options: ["Brave", "Scared", "Calm", "Proud"], correct: 1, explanation: "\"Scared\" es sinónimo de \"afraid\" (asustado)." },
-            { id: 13, section: "Vocabulario Intermedio", text: "\"To borrow\" means:", options: ["Prestar (dar)", "Tomar prestado", "Devolver", "Regalar"], correct: 1, explanation: "\"To borrow\" es pedir algo prestado, no darlo." },
-            { id: 14, section: "Vocabulario Intermedio", text: "Which word means \"reunión\"?", options: ["Meeting", "Meaning", "Metting", "Meting"], correct: 0, explanation: "\"Meeting\" significa \"reunión\" en un contexto laboral o social." },
-            { id: 15, section: "Vocabulario Intermedio", text: "What does \"however\" mean?", options: ["Además", "Sin embargo", "Por lo tanto", "Mientras tanto"], correct: 1, explanation: "\"However\" se usa para introducir un contraste, como \"sin embargo\"." },
+            // --- III. QUESTIONS WITH DO / DOES ---
+            { id: 13, section: "III. Questions with DO / DOES", text: "___ you speak English?", options: ["Do", "Does", "Are"], correct: 0, explanation: "Con 'you' se usa el auxiliar 'Do'." },
+            { id: 14, section: "III. Questions with DO / DOES", text: "___ he play guitar?", options: ["Do", "Does", "Is"], correct: 1, explanation: "Con 'he' (tercera persona singular) se usa 'Does'." },
+            { id: 15, section: "III. Questions with DO / DOES", text: "___ they dance cueca?", options: ["Do", "Does", "Are"], correct: 0, explanation: "Con 'they' (plural) se usa 'Do'." },
+            { id: 16, section: "III. Questions with DO / DOES", text: "___ she cook very well?", options: ["Do", "Does", "Is"], correct: 1, explanation: "Con 'she' se usa 'Does'." },
+            { id: 17, section: "III. Questions with DO / DOES", text: "Choose the correct question:", options: ["Do he work here?", "Does he work here?", "Does he works here?"], correct: 1, explanation: "Con 'does' el verbo principal va en su forma base, sin 's': Does he work here?" },
+            { id: 18, section: "III. Questions with DO / DOES", text: "Do they dance cueca? Choose the correct short answer:", options: ["Yes, they do.", "Yes, they does.", "Yes, they are."], correct: 0, explanation: "La respuesta corta repite el auxiliar usado en la pregunta: Yes, they do." },
 
-            // --- GRAMÁTICA INTERMEDIA (16-20) ---
-            { id: 16, section: "Gramática Intermedia", text: "Complete: \"If it rains, I ___ stay home.\"", options: ["will", "would", "am", "was"], correct: 0, explanation: "Primer condicional: \"If + presente, will + verbo\"." },
-            { id: 17, section: "Gramática Intermedia", text: "Complete: \"She has ___ finished her homework.\"", options: ["already", "yet", "ago", "since"], correct: 0, explanation: "\"Already\" se usa en oraciones afirmativas con presente perfecto." },
-            { id: 18, section: "Gramática Intermedia", text: "Complete: \"I ___ to Paris last year.\"", options: ["go", "goes", "went", "going"], correct: 2, explanation: "\"Went\" es el pasado simple irregular de \"go\", usado con \"last year\"." },
-            { id: 19, section: "Gramática Intermedia", text: "Choose the correct comparative: \"This book is ___ than that one.\"", options: ["interesting", "more interesting", "most interesting", "interestinger"], correct: 1, explanation: "Los adjetivos largos forman el comparativo con \"more\"." },
-            { id: 20, section: "Gramática Intermedia", text: "Complete: \"There ___ a lot of traffic yesterday.\"", options: ["was", "were", "is", "are"], correct: 0, explanation: "\"Traffic\" es incontable, por lo que se usa \"was\" en pasado." },
+            // --- IV. VERB + TO / GOING TO ---
+            { id: 19, section: "IV. Verb + TO / Going to", text: "Complete: \"I want ___ study English.\"", options: ["to", "for", "going"], correct: 0, explanation: "'Want' se combina con 'to' + verbo base: want to study." },
+            { id: 20, section: "IV. Verb + TO / Going to", text: "Complete: \"She needs ___ work on Monday.\"", options: ["for", "to", "at"], correct: 1, explanation: "'Need' se combina con 'to' + verbo base: needs to work." },
+            { id: 21, section: "IV. Verb + TO / Going to", text: "Complete: \"We like ___ travel in summer.\"", options: ["to", "for", "going"], correct: 0, explanation: "'Like' se combina con 'to' + verbo base: like to travel." },
+            { id: 22, section: "IV. Verb + TO / Going to", text: "Complete: \"I'm ___ to study tonight.\"", options: ["go", "going", "went"], correct: 1, explanation: "La estructura es 'going to' + verbo base." },
+            { id: 23, section: "IV. Verb + TO / Going to", text: "Complete: \"They are going ___ buy a new car.\"", options: ["for", "to", "at"], correct: 1, explanation: "La estructura es 'going to' + verbo base: going to buy." },
+            { id: 24, section: "IV. Verb + TO / Going to", text: "Complete: \"He ___ going to call me later.\"", options: ["are", "is", "am"], correct: 1, explanation: "Con 'he' se usa 'is' antes de 'going to'." },
 
-            // --- TIEMPOS VERBALES (21-25) ---
-            { id: 21, section: "Tiempos Verbales", text: "Complete: \"While I ___ dinner, the phone rang.\"", options: ["cook", "cooked", "was cooking", "have cooked"], correct: 2, explanation: "Pasado continuo (\"was cooking\") interrumpido por pasado simple (\"rang\")." },
-            { id: 22, section: "Tiempos Verbales", text: "Complete: \"I have never ___ sushi before.\"", options: ["eat", "ate", "eaten", "eating"], correct: 2, explanation: "El presente perfecto usa el participio pasado: \"eaten\"." },
-            { id: 23, section: "Tiempos Verbales", text: "Complete: \"She ___ here since 2020.\"", options: ["lives", "lived", "has lived", "is living"], correct: 2, explanation: "\"Since\" indica una acción que empezó en el pasado y continúa: presente perfecto." },
-            { id: 24, section: "Tiempos Verbales", text: "Complete: \"If I ___ more time, I would travel more.\"", options: ["have", "had", "has", "will have"], correct: 1, explanation: "Segundo condicional: \"If + pasado simple, would + verbo\"." },
-            { id: 25, section: "Tiempos Verbales", text: "Complete: \"This house ___ built in 1990.\"", options: ["is", "was", "has", "did"], correct: 1, explanation: "Voz pasiva en pasado simple: \"was + participio\"." },
+            // --- V. MODAL VERBS ---
+            { id: 25, section: "V. Modal Verbs", text: "You ___ bring your passport. It is obligatory.", options: ["could", "should", "must"], correct: 2, explanation: "Una obligación estricta se expresa con 'must'." },
+            { id: 26, section: "V. Modal Verbs", text: "You ___ pack sunscreen. It's a good idea.", options: ["must", "should", "can't"], correct: 1, explanation: "Una recomendación se expresa con 'should'." },
+            { id: 27, section: "V. Modal Verbs", text: "You ___ pack a book for the trip. It's optional.", options: ["could", "must", "mustn't"], correct: 0, explanation: "Algo opcional se expresa con 'could'." },
+            { id: 28, section: "V. Modal Verbs", text: "___ you repeat that, please?", options: ["Can", "Must", "Should"], correct: 0, explanation: "Una petición educada se hace con 'Can'." },
+            { id: 29, section: "V. Modal Verbs", text: "I ___ understand this word. Can you help me?", options: ["can", "can't", "should"], correct: 1, explanation: "Expresar incapacidad se hace con 'can't'." },
+            { id: 30, section: "V. Modal Verbs", text: "___ you like to go camping with me?", options: ["Would", "Should", "Must"], correct: 0, explanation: "Una invitación se hace con 'Would you like...?'." },
 
-            // --- REPASO MIXTO (26-30) ---
-            { id: 26, section: "Repaso Mixto", text: "Choose the phrasal verb that means \"cancelar\":", options: ["Call off", "Call on", "Call up", "Call back"], correct: 0, explanation: "\"Call off\" significa cancelar un evento o plan." },
-            { id: 27, section: "Repaso Mixto", text: "What does \"in the long run\" mean?", options: ["Ahora mismo", "A largo plazo", "Nunca", "De repente"], correct: 1, explanation: "\"In the long run\" es una expresión que significa \"a largo plazo\"." },
-            { id: 28, section: "Repaso Mixto", text: "Complete: \"Not only ___ she smart, but also kind.\"", options: ["is", "was", "does", "did"], correct: 0, explanation: "Con \"Not only\" al inicio, se invierte el orden: \"is she\"." },
-            { id: 29, section: "Repaso Mixto", text: "Choose the correct reported speech: He said he ___ tired.", options: ["is", "was", "be", "being"], correct: 1, explanation: "En estilo indirecto, el presente cambia a pasado: \"was\"." },
-            { id: 30, section: "Repaso Mixto", text: "Which sentence is grammatically correct?", options: ["Neither of them are right.", "Neither of them is right.", "Neither of them be right.", "Neither of them right."], correct: 1, explanation: "\"Neither\" se trata como singular, por lo tanto usa \"is\"." }
+            // --- VI. CONNECTORS ---
+            { id: 31, section: "VI. Connectors", text: "I like coffee, ___ I don't like tea.", options: ["because", "but", "so"], correct: 1, explanation: "Un contraste se expresa con 'but'." },
+            { id: 32, section: "VI. Connectors", text: "I study ___ I want a better job.", options: ["because", "however", "although"], correct: 0, explanation: "Una razón se expresa con 'because'." },
+            { id: 33, section: "VI. Connectors", text: "I was tired, ___ I went home.", options: ["so", "although", "unless"], correct: 0, explanation: "Una consecuencia se expresa con 'so'." },
+            { id: 34, section: "VI. Connectors", text: "___ it was late, I finished my work.", options: ["Although", "Therefore", "First"], correct: 0, explanation: "Un contraste se expresa con 'Although'." },
+            { id: 35, section: "VI. Connectors", text: "I won't go ___ you come.", options: ["unless", "so", "also"], correct: 0, explanation: "Una condición negativa se expresa con 'unless'." },
+            { id: 36, section: "VI. Connectors", text: "I studied hard. ___, I didn't pass.", options: ["However", "Because", "First"], correct: 0, explanation: "Un contraste entre oraciones se expresa con 'However'." },
+            { id: 37, section: "VI. Connectors", text: "I like fruits, ___ apples.", options: ["for example", "because", "however"], correct: 0, explanation: "Dar un ejemplo se expresa con 'for example'." },
+            { id: 38, section: "VI. Connectors", text: "First, I wake up. ___, I take a shower.", options: ["Then", "Because", "Although"], correct: 0, explanation: "Una secuencia de pasos se expresa con 'Then'." },
+            { id: 39, section: "VI. Connectors", text: "What does \"Therefore\" express?", options: ["Adición (además)", "Consecuencia (por lo tanto)", "Contraste (sin embargo)", "Tiempo (mientras tanto)"], correct: 1, explanation: "'Therefore' expresa consecuencia (por lo tanto)." },
+            { id: 40, section: "VI. Connectors", text: "What does \"Furthermore\" express?", options: ["Adición (además)", "Consecuencia (por lo tanto)", "Contraste (sin embargo)", "Tiempo (mientras tanto)"], correct: 0, explanation: "'Furthermore' expresa adición (además)." },
+            { id: 41, section: "VI. Connectors", text: "What does \"Meanwhile\" express?", options: ["Adición (además)", "Consecuencia (por lo tanto)", "Contraste (sin embargo)", "Tiempo (mientras tanto)"], correct: 3, explanation: "'Meanwhile' expresa tiempo (mientras tanto)." },
+            { id: 42, section: "VI. Connectors", text: "What does \"Nevertheless\" express?", options: ["Adición (además)", "Consecuencia (por lo tanto)", "Contraste (sin embargo)", "Tiempo (mientras tanto)"], correct: 2, explanation: "'Nevertheless' expresa contraste (sin embargo)." },
+
+            // --- VII. PHRASAL VERBS ---
+            { id: 43, section: "VII. Phrasal Verbs", text: "Complete: \"First I ___ at 7 AM, then I get up.\"", options: ["work out", "wake up", "log in", "give up"], correct: 1, explanation: "'Wake up' significa despertarse." },
+            { id: 44, section: "VII. Phrasal Verbs", text: "Complete: \"Don't ___! You can do it.\"", options: ["check out", "give up", "figure out", "wake up"], correct: 1, explanation: "'Give up' significa rendirse." },
+            { id: 45, section: "VII. Phrasal Verbs", text: "Complete: \"I ___ every morning at the gym.\"", options: ["log in", "give up", "work out", "check out"], correct: 2, explanation: "'Work out' significa entrenar/ejercitarse." },
+            { id: 46, section: "VII. Phrasal Verbs", text: "Complete: \"___ this video! It's amazing.\"", options: ["figure out", "check out", "wake up", "work out"], correct: 1, explanation: "'Check out' significa revisar/echar un vistazo." },
+            { id: 47, section: "VII. Phrasal Verbs", text: "Complete: \"I ___ to the app every morning.\"", options: ["give up", "log in", "check out", "figure out"], correct: 1, explanation: "'Log in' significa iniciar sesión." },
+            { id: 48, section: "VII. Phrasal Verbs", text: "Complete: \"I can't ___ this problem. It's too difficult.\"", options: ["wake up", "work out", "figure out", "log in"], correct: 2, explanation: "'Figure out' significa resolver/entender algo." },
+
+            // --- VIII. CONNECTED SPEECH ---
+            { id: 49, section: "VIII. Connected Speech", text: "I want to sleep. → I ___ sleep.", options: ["wanna", "gonna", "gimme", "didja"], correct: 0, explanation: "'Want to' se contrae de forma hablada como 'wanna'." },
+            { id: 50, section: "VIII. Connected Speech", text: "Give me your phone. → ___ your phone.", options: ["Wanna", "Gimme", "Gonna", "Didja"], correct: 1, explanation: "'Give me' se contrae de forma hablada como 'gimme'." },
+            { id: 51, section: "VIII. Connected Speech", text: "Didja see it? → ___ see it?", options: ["Did you", "Do you", "Did he", "Does he"], correct: 0, explanation: "'Didja' es la forma hablada de 'Did you'." },
+            { id: 52, section: "VIII. Connected Speech", text: "I'm gonna travel. → I'm ___ travel.", options: ["going to", "want to", "have to", "used to"], correct: 0, explanation: "'Gonna' es la forma hablada de 'going to'." }
         ];
 
         function showToast(message, type = "info") {
@@ -598,7 +637,7 @@
             const unansweredCount = questions.length - answeredCount;
             let confirmMessage = unansweredCount > 0
                 ? `Tienes ${unansweredCount} preguntas sin responder. ¿Estás seguro de que quieres entregar la prueba a Teacher Seba?`
-                : `Has completado las 30 preguntas. ¿Deseas entregar la prueba y ver tus resultados de inmediato?`;
+                : `Has completado las ${questions.length} preguntas. ¿Deseas entregar la prueba y ver tus resultados de inmediato?`;
 
             const modalBackdrop = document.createElement("div");
             modalBackdrop.className = "fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 z-50";
@@ -636,17 +675,15 @@
             questions.forEach(q => { if (userAnswers[q.id] !== undefined && userAnswers[q.id] === q.correct) correctAnswersCount++; });
 
             const scorePercent = Math.round((correctAnswersCount / questions.length) * 100);
+            const notaFinal = calcNota(correctAnswersCount, questions.length);
+            const isApproved = parseFloat(notaFinal.replace(',', '.')) >= 4.0;
 
             scoreDisplay.innerText = `${correctAnswersCount} / ${questions.length}`;
-            percentageDisplay.innerText = `${scorePercent}%`;
+            percentageDisplay.innerText = notaFinal;
             timeSpentDisplay.innerText = timeSpentText;
 
-            let levelText = "";
-            if (scorePercent >= 90) { levelText = "¡Excelente nivel! Cerca de un B2/C1 🌟"; performanceLabel.className = "text-xs font-bold text-emerald-600 mt-1"; }
-            else if (scorePercent >= 70) { levelText = "Muy buen nivel, aprox. B1 👍"; performanceLabel.className = "text-xs font-bold text-indigo-600 mt-1"; }
-            else if (scorePercent >= 50) { levelText = "Nivel intermedio-bajo, aprox. A2 📖"; performanceLabel.className = "text-xs font-bold text-amber-600 mt-1"; }
-            else { levelText = "Nivel inicial, aprox. A1 🔍"; performanceLabel.className = "text-xs font-bold text-rose-600 mt-1"; }
-            performanceLabel.innerText = levelText;
+            performanceLabel.innerText = `${scorePercent}% de respuestas correctas · ${isApproved ? "Aprobado" : "Insuficiente"}`;
+            performanceLabel.className = `text-xs font-bold mt-1 ${isApproved ? "text-emerald-600" : "text-rose-600"}`;
 
             if (timeOut) document.getElementById("completion-subtitle").innerText = "La prueba finalizó por límite de tiempo. Tus respuestas fueron registradas.";
 
@@ -657,20 +694,21 @@
 
             if (scorePercent >= 60) confetti({ particleCount: 150, spread: 80, origin: { y: 0.6 } });
 
-            sendAutomaticResults(correctAnswersCount, scorePercent, timeSpentText);
+            sendAutomaticResults(correctAnswersCount, scorePercent, timeSpentText, notaFinal);
         }
 
-        function sendAutomaticResults(correctCount, percentage, timeSpent) {
+        function sendAutomaticResults(correctCount, percentage, timeSpent, notaFinal) {
             const sendingStatusContainer = document.getElementById("email-sending-status");
             const reportData = generatePlainTextReport();
 
             document.getElementById("hidden-email-form").action = `https://formsubmit.co/${teacherEmail}`;
 
             document.getElementById("hidden-student-name").value = studentData.name;
-            document.getElementById("hidden-score").value = `${correctCount} / 30`;
+            document.getElementById("hidden-score").value = `${correctCount} / ${questions.length}`;
+            document.getElementById("hidden-nota").value = notaFinal;
             document.getElementById("hidden-percentage").value = `${percentage}%`;
             document.getElementById("hidden-time").value = timeSpent;
-            document.getElementById("hidden-subject").value = `Prueba de Nivelación: ${studentData.name}`;
+            document.getElementById("hidden-subject").value = `Prueba de Gramática: ${studentData.name} (Nota ${notaFinal})`;
             document.getElementById("hidden-report").value = reportData;
 
             fetch(`https://formsubmit.co/ajax/${teacherEmail}`, {
@@ -678,12 +716,13 @@
                 headers: { "Content-Type": "application/json", "Accept": "application/json" },
                 body: JSON.stringify({
                     Estudiante: studentData.name,
-                    Puntaje: `${correctCount} / 30`,
+                    Puntaje: `${correctCount} / ${questions.length}`,
+                    Nota: notaFinal,
                     Rendimiento: `${percentage}%`,
                     Tiempo_Empleado: timeSpent,
-                    _subject: `Prueba de Nivelación: ${studentData.name}`,
+                    _subject: `Prueba de Gramática: ${studentData.name} (Nota ${notaFinal})`,
                     _captcha: "false",
-                    _url: "https://teacherseba.com/prueba-nivelacion.html",
+                    _url: "https://test.teacherseba.com",
                     Reporte_Detallado: reportData
                 })
             })
@@ -768,13 +807,15 @@
             let correctCount = 0;
             questions.forEach(q => { if (userAnswers[q.id] !== undefined && userAnswers[q.id] === q.correct) correctCount++; });
             const percent = Math.round((correctCount / questions.length) * 100);
+            const notaFinal = calcNota(correctCount, questions.length);
 
             let report = `==================================================\n`;
-            report += `REPORTE - PRUEBA DE NIVELACIÓN DE INGLÉS\n`;
+            report += `REPORTE - PRUEBA DE GRAMÁTICA (PUERTAS AL INGLÉS)\n`;
             report += `==================================================\n`;
             report += `Nombre del Estudiante: ${studentData.name}\n`;
             report += `Fecha y Hora: ${new Date().toLocaleString()}\n`;
             report += `Puntaje Obtenido: ${correctCount} de ${questions.length} respuestas correctas\n`;
+            report += `Nota: ${notaFinal}\n`;
             report += `Porcentaje de Rendimiento: ${percent}%\n`;
             report += `==================================================\n\n`;
 
@@ -819,7 +860,7 @@
             const link = document.createElement("a");
             link.href = url;
             const safeName = studentData.name.replace(/[^a-z0-9]/gi, '_').toLowerCase();
-            link.download = `reporte_nivelacion_${safeName}.txt`;
+            link.download = `reporte_gramatica_${safeName}.txt`;
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
