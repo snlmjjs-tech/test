@@ -73,7 +73,23 @@
         </div>
 
         <!-- 1. LOGIN -->
-        <section id="screen-login" class="bg-white rounded-3xl shadow-xl border border-slate-100 p-8 max-w-md w-full mx-auto transition-all duration-300">
+        <!-- PANTALLA DE BLOQUEO: la prueba abre recién el martes 13-10-2026 a las 19:00 hrs (Chile) -->
+        <section id="screen-locked" class="hidden bg-white rounded-3xl shadow-sm border border-slate-100 p-8 max-w-md w-full mx-auto text-center transition-all duration-300">
+            <div class="mx-auto w-16 h-16 bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center text-3xl mb-4">
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <span class="bg-indigo-50 text-indigo-600 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase">Evaluación Oficial</span>
+            <h2 class="text-2xl font-extrabold text-slate-800 mt-3">Prueba de Gramática</h2>
+            <p class="text-slate-500 mt-1 text-sm">Taller "Puertas al Inglés". Todavía no está disponible.</p>
+            <div class="bg-slate-50 border border-slate-100 rounded-xl p-5 mt-6">
+                <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Se habilita el</p>
+                <p class="text-lg font-extrabold text-indigo-700">Martes 13 de octubre, 19:00 hrs</p>
+                <p class="text-xs text-slate-400 mt-2" id="locked-countdown">Calculando tiempo restante...</p>
+            </div>
+            <p class="text-xs text-slate-400 mt-4">Esta página se desbloqueará sola, no necesitas recargarla.</p>
+        </section>
+
+        <section id="screen-login" class="hidden bg-white rounded-3xl shadow-xl border border-slate-100 p-8 max-w-md w-full mx-auto transition-all duration-300">
             <div class="text-center mb-8">
                 <span class="bg-indigo-50 text-indigo-600 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase">Evaluación Oficial</span>
                 <h2 class="text-2xl font-extrabold text-slate-800 mt-3">Prueba de Gramática</h2>
@@ -309,9 +325,43 @@
             return nota.toFixed(1).replace('.', ',');
         }
 
+        const screenLocked = document.getElementById("screen-locked");
         const screenLogin = document.getElementById("screen-login");
         const screenQuiz = document.getElementById("screen-quiz");
         const screenResults = document.getElementById("screen-results");
+
+        // La prueba se habilita el martes 13-10-2026 a las 19:00 hrs, hora de Chile (UTC-3).
+        const TEST_OPEN_AT = new Date('2026-10-13T19:00:00-03:00');
+        let lockCountdownInterval = null;
+
+        function formatCountdown(ms) {
+            const totalSeconds = Math.max(0, Math.floor(ms / 1000));
+            const days = Math.floor(totalSeconds / 86400);
+            const hours = Math.floor((totalSeconds % 86400) / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            const seconds = totalSeconds % 60;
+            const parts = [];
+            if (days > 0) parts.push(`${days}d`);
+            parts.push(`${hours.toString().padStart(2, '0')}h`, `${minutes.toString().padStart(2, '0')}m`, `${seconds.toString().padStart(2, '0')}s`);
+            return `Faltan ${parts.join(' ')}`;
+        }
+
+        function checkTestLock() {
+            const now = new Date();
+            if (now >= TEST_OPEN_AT) {
+                if (lockCountdownInterval) { clearInterval(lockCountdownInterval); lockCountdownInterval = null; }
+                screenLocked.classList.add("hidden");
+                screenLogin.classList.remove("hidden");
+                return;
+            }
+            screenLocked.classList.remove("hidden");
+            screenLogin.classList.add("hidden");
+            const countdownEl = document.getElementById("locked-countdown");
+            countdownEl.innerText = formatCountdown(TEST_OPEN_AT - now);
+            if (!lockCountdownInterval) {
+                lockCountdownInterval = setInterval(checkTestLock, 1000);
+            }
+        }
 
         const formLogin = document.getElementById("form-login");
         const studentNameInput = document.getElementById("student-name");
@@ -486,6 +536,7 @@
             if (localStorage.getItem("teacher_email")) teacherBadge.classList.remove("hidden");
 
             renderQuestionsGrid();
+            checkTestLock();
         });
 
         formLogin.addEventListener("submit", () => {
